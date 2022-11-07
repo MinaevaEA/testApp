@@ -19,11 +19,11 @@ class AdapterCategory :
         Log.d("1", "setData")
         notifyDataSetChanged()
     }
-
+    //TODO сделать форму для кнопки через shape
     class MyViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataCategory) {
-            binding.title.text = data.category
+            binding.price.text = data.category
         }
     }
 
