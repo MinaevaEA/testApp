@@ -1,4 +1,4 @@
-package com.example.pizza.ui.home
+package com.example.pizza.ui.general
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -19,6 +19,7 @@ class AdapterCategory :
         Log.d("1", "setData")
         notifyDataSetChanged()
     }
+
     //TODO сделать форму для кнопки через shape
     class MyViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {

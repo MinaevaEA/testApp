@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Pizza</string>
-    <string name="title_home">Меню</string>
-    <string name="title_dashboard">Профиль</string>
-    <string name="title_notifications">Корзина</string>
+    <string name="app_name">testSamsung</string>
+    <string name="title_shop">Shop</string>
+    <string name="title_details">Details</string>
+    <string name="title_features">Features</string>
+    <string name="ecommerce">Ecommerce</string>
+    <string name="concept">Concept</string>
+    <string name="btn_by_now">Buy now!</string>
+    <string name="btn_add_cart">Add to Cart $1.500.00</string>
 </resources>
