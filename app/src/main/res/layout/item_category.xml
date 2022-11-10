@@ -6,33 +6,28 @@
     android:layout_height="wrap_content">
 
 
-    <Button
-        android:id="@+id/price"
-        android:layout_width="87dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:insetTop="0dp"
-        android:background="@drawable/buttom"
-        android:insetBottom="0dp"
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@color/background"
+        android:fontFamily="@font/mark_pro_med"
         android:stateListAnimator="@null"
-        android:text="ddddddd"
         android:textAllCaps="false"
-        android:textColor="#C3C4C9"
-        android:textSize="13sp"
-        android:translationZ="4dp"
-        app:backgroundTint="#ffffff"
-        app:backgroundTintMode="@null"
+        android:textColor="@color/title"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
 
-        app:iconPadding="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="89dp"
+        android:layout_height="85dp"
+        android:background="@color/background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/shape_category"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

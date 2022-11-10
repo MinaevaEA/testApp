@@ -24,7 +24,7 @@ class AdapterCategory :
     class MyViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataCategory) {
-            binding.price.text = data.category
+            binding.category.text = data.category
         }
     }
 
