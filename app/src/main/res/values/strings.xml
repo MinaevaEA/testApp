@@ -8,4 +8,9 @@
     <string name="btn_by_now">Buy now!</string>
     <string name="btn_add_cart">Add to Cart $1.500.00</string>
     <string name="select">Select color and capacity</string>
+    <string name="hot_sales">Hot sales</string>
+    <string name="select_ct">Select Category</string>
+    <string name="best_seller">Best Seller</string>
+    <string name="see_more">see more</string>
+    <string name="view_all">view_all</string>
 </resources>
