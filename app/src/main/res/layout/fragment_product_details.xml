@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.product.ProductDetailsFragment">
-
+    tools:context=".ui.product.ProductDetailsFragment"
+    android:background="#F5F5F5">
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerDetails"
         android:layout_width="wrap_content"
         android:layout_height="199dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:layout_anchorGravity="center"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="88dp" />
-
+        tools:layout_editor_absoluteX="85dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomAppBar"
@@ -30,6 +30,8 @@
         app:layout_constraintVertical_bias="0.666"
         tools:ignore="BottomAppBar,MissingConstraints">
 
+
+
         <TextView
             android:id="@+id/title"
             style="@style/ProductDetails"
@@ -38,7 +40,6 @@
             android:layout_marginStart="38dp"
             android:layout_marginTop="16dp"
             android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
             app:layout_constraintHorizontal_bias="0.003"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -46,9 +47,22 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"
             style="@style/Widget.App.BottomNavigationView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="20dp"
+            android:paddingRight="0dp"
+            android:textSize="28sp"
+            app:backgroundTint="#FFFFFF"
+            app:elevation="0dp"
+            app:guidelineUseRtl="true"
+            app:itemActiveIndicatorStyle="@style/ThemeOverlay.App.BottomNavigationView"
+            app:itemIconSize="0dp"
+            app:itemPaddingBottom="25dp"
+            app:itemPaddingTop="0dp"
+            app:itemRippleColor="#FF6E4E"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -59,42 +73,43 @@
 
         <TextView
             android:id="@+id/cpu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="28dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:textColor="#B7B7B7"
+            android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nav_view"
-            app:layout_constraintVertical_bias="0.085" />
+            app:layout_constraintTop_toBottomOf="@+id/nav_view" />
 
         <TextView
             android:id="@+id/camera"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="40dp"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@+id/cpu"
             app:layout_constraintTop_toBottomOf="@+id/nav_view" />
 
         <TextView
             android:id="@+id/capacity"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/cpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="100dp"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nav_view" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/like"
+            android:layout_width="33dp"
+            android:layout_height="27dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="28dp"
-            android:src="@drawable/ic_notifications_black_24dp"
+            android:background="@drawable/buttom_navigation_blue"
+            android:src="?attr/homeAsUpIndicator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -112,10 +127,91 @@
             app:backgroundTintMode="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title"
-            app:layout_constraintVertical_bias="0.842" />
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/sd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toStartOf="@+id/capacity"
+            app:layout_constraintHorizontal_bias="0.426"
+            app:layout_constraintStart_toEndOf="@+id/camera"
+            app:layout_constraintTop_toBottomOf="@+id/nav_view" />
+
+        <TextView
+            android:id="@+id/select"
+            style="@style/TitleMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/select"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cpu" />
+
+        <Button
+            android:id="@+id/button128"
+            android:layout_width="86dp"
+            android:layout_height="37dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/buttom"
+            android:text="128 gb"
+            android:textAllCaps="false"
+            android:textColor="#8D8D8D"
+            android:textSize="13sp"
+            app:backgroundTint="@null"
+            app:backgroundTintMode="@null"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/button256"
+            app:layout_constraintTop_toBottomOf="@+id/select"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/button256"
+            android:layout_width="83dp"
+            android:layout_height="38dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/buttom"
+            android:text="256 gb"
+            android:textAllCaps="false"
+            android:textColor="#8D8D8D"
+            android:textSize="13sp"
+            app:backgroundTint="@null"
+            app:backgroundTintMode="@null"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="42dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="20dp"
+            style="@style/ButtonSelectDark"
+            android:src="?attr/actionModeCopyDrawable"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/dark"
+            style="@style/ButtonSelectBlue"
+            android:layout_width="44dp"
+            android:layout_height="38dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/button128"
+            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintStart_toEndOf="@+id/imageButton4" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

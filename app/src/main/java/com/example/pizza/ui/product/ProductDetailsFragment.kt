@@ -32,24 +32,22 @@ class ProductDetailsFragment : Fragment() {
         retrofitServices =
             (requireContext().applicationContext as SubApplication).provideDataFromNetwork()
                 .create()
-
+        /*val listDataCategory =
+            (requireContext().applicationContext as SubApplication).provideDataSource()
+                .getTestDataDetail()*/
         val dataNetworkInteract = DataNetworkDetailsInteract(retrofitServices)
         val viewModelFactory = ProductDetailsViewModelFactory(dataNetworkInteract)
         productDetailsViewModel =
             ViewModelProvider(this, viewModelFactory)[ProductDetailsViewModel::class.java]
         productDetailsViewModel.onViewCreatedLoadingProductDetails()
-        productDetailsViewModel.loadingProductDetails.observe(requireActivity()){
+        productDetailsViewModel.loadingProductDetails.observe(requireActivity()) {
             binding.title.text = it.title
-           // binding.title.text = it.title
-           /* binding.camera.text = it.camera
-            binding.capacity.text = it.capacity
-            binding.color.text = it.color
-            binding.is_Favorite.text = it.is_Favorite
-            binding.rating.text = it.rating
-            binding.price.text = it.price
+            binding.cpu.text = it.CPU
+            binding.camera.text = it.camera
+            binding.capacity.text = it.capacity[0]
             binding.sd.text = it.sd
-            binding.ssd.text = it.ssd*/
-           // Glide.with(binding.root.context).load(it.images).into(binding.image)
+
+            // Glide.with(binding.root.context).load(it.images).into(binding.image)
 
         }
         binding.viewPagerDetails.adapter = viewPagerAdapterProductDetails
@@ -58,6 +56,7 @@ class ProductDetailsFragment : Fragment() {
         }
 
     }
+
     companion object {
         fun newInstance(CPU: String): ProductDetailsFragment = ProductDetailsFragment()
     }
