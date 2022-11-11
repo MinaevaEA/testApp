@@ -24,7 +24,7 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/filter_btn"
             android:layout_width="32dp"
             android:layout_height="35dp"
             android:layout_marginTop="16dp"
@@ -220,10 +220,6 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@+id/nestedScrollView"
-        app:layout_anchorGravity="bottom|center" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

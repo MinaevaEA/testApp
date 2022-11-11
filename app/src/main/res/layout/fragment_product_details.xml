@@ -103,7 +103,7 @@
             app:layout_constraintTop_toBottomOf="@+id/nav_view" />
 
         <ImageButton
-            android:id="@+id/like"
+            android:id="@+id/close_btn"
             android:layout_width="33dp"
             android:layout_height="27dp"
             android:layout_marginTop="16dp"
@@ -114,7 +114,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/done_btn"
             style="@style/ButtonGeneral"
             android:layout_width="330dp"
             android:layout_height="48dp"
@@ -169,7 +169,7 @@
             android:textSize="13sp"
             app:backgroundTint="@null"
             app:backgroundTintMode="@null"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/done_btn"
             app:layout_constraintEnd_toStartOf="@+id/button256"
             app:layout_constraintTop_toBottomOf="@+id/select"
             app:layout_constraintVertical_bias="1.0" />
@@ -188,7 +188,7 @@
             android:textSize="13sp"
             app:backgroundTint="@null"
             app:backgroundTintMode="@null"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/done_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select"
             app:layout_constraintVertical_bias="1.0" />
@@ -201,7 +201,7 @@
             android:layout_marginBottom="20dp"
             style="@style/ButtonSelectDark"
             android:src="?attr/actionModeCopyDrawable"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/done_btn"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
@@ -210,7 +210,7 @@
             android:layout_width="44dp"
             android:layout_height="38dp"
             android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/done_btn"
             app:layout_constraintEnd_toStartOf="@+id/button128"
             app:layout_constraintHorizontal_bias="0.067"
             app:layout_constraintStart_toEndOf="@+id/imageButton4" />

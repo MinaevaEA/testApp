@@ -8,18 +8,15 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.pizza.ui.general.GeneralScreenFragment"
-
         tools:layout="@layout/fragment_general_screen" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/my_cart"
         android:name="com.example.pizza.ui.mycart.MyCartFragment"
-
-        tools:layout="@layout/fragment_my_cart" />
+        tools:layout="@layout/fragment_my_cart"/>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.pizza.ui.product.ProductDetailsFragment"
-
         tools:layout="@layout/fragment_product_details" />
 </navigation>

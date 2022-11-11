@@ -10,5 +10,6 @@
     <color name="general_orange">#FF6E4E</color>
     <color name="title">#010035</color>
     <color name="background">#F5F5F5</color>
+    <color name="spinner">#DCDCDC</color>
 
 </resources>

@@ -50,4 +50,4 @@ class AdapterBestSeller(private val currencyAdapterListener: ViewListener) :
 
 interface ViewListener {
     fun onClicked(position: String)
-}
+  }

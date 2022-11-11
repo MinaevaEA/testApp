@@ -13,4 +13,9 @@
     <string name="best_seller">Best Seller</string>
     <string name="see_more">see more</string>
     <string name="view_all">view_all</string>
+    <string name="done">Done</string>
+    <string name="brand_fl">Brand</string>
+    <string name="price_fl">Price</string>
+    <string name="size_fl">Size</string>
+    <string name="option_fl">Filter options</string>
 </resources>

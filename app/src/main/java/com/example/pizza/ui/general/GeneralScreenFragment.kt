@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -58,7 +59,13 @@ class GeneralScreenFragment : Fragment(), ViewListener {
         binding.viewPager.adapter = viewPagerAdapterHomeStore
         setUpViewPager()
         initObserves()
+        binding.filterBtn.setOnClickListener {
+             generalScreenViewModel.openFilter.observe(requireActivity()){
+                 openFilter()
+             }
+        }
     }
+
     //TODO apply with
 
     private fun initObserves() {
@@ -71,7 +78,7 @@ class GeneralScreenFragment : Fragment(), ViewListener {
         generalScreenViewModel.loadingHomeStore.observe(requireActivity()) {
             viewPagerAdapterHomeStore.setDataHomeStore(it)
         }
-        generalScreenViewModel.onClickedEvent.observe(requireActivity()) {
+        generalScreenViewModel.openProductDetails.observe(requireActivity()) {
             openProductDetails(it)
         }
     }
@@ -82,7 +89,7 @@ class GeneralScreenFragment : Fragment(), ViewListener {
     }
 
     override fun onClicked(position: String) {
-        generalScreenViewModel.onClicked(position)
+        generalScreenViewModel.onClickedDetail(position)
     }
 
     //TODO разобраться со стеком
@@ -91,5 +98,12 @@ class GeneralScreenFragment : Fragment(), ViewListener {
             .addToBackStack(null)
             .replace(R.id.container, ProductDetailsFragment.newInstance(CPU))
             .commit()
+    }
+
+    private fun openFilter() {
+        val myDialogFragment = FilterOptionDialog()
+        val manager = requireActivity().supportFragmentManager
+        val transaction: FragmentTransaction = manager.beginTransaction()
+        myDialogFragment.show(transaction, "dialog")
     }
 }

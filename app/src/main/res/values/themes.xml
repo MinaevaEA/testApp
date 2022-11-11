@@ -36,6 +36,9 @@
         <item name="android:textColor">@color/title</item>
         <item name="fontFamily">@font/mark_pro_med</item>
     </style>
+    <style name="TitleFilter" parent="TitleMin">
+        <item name="android:textSize">18sp</item>
+    </style>
 
     <style name="ButtonGeneral">
         <item name="android:background">@drawable/buttom_detail</item>
