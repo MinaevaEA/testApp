@@ -35,29 +35,27 @@ class MyCartFragment : Fragment() {
         val viewModelFactory = MyCartViewModelFactory(dataNetworkInteract)
         myCartViewModel =
             ViewModelProvider(this, viewModelFactory)[MyCartViewModel::class.java]
-      //  adapterMyCart = AdapterMyCart()
+        adapterMyCart = AdapterMyCart()
         myCartViewModel.onViewCreatedLoadingProductDetails()
-      //  binding.recyclerView1.layoutManager = LinearLayoutManager(requireContext())
-      //  binding.recyclerView1.adapter = adapterMyCart
-        // initObserves()
+        binding.recyclerView1.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView1.adapter = adapterMyCart
+        initObserves()
         myCartViewModel.loadingProductDetails.observe(requireActivity()) {
-            binding.textView2.text = it.delivery
+            binding.deliveryFree.text = it.delivery
+            binding.priceTotal.text = it.total
         }
     }
-}
+
     //TODO apply with
 
-   /* private fun initObserves() {
-        myCartViewModel.loadingListCategory.observe(requireActivity()) {
-            adapterCategory.setDataCategory(it)
-        }
-        myCartViewModel.loadingListBestSeller.observe(requireActivity()) {
-            adapterMyCart.setDataBestSeller(it)
-        }
-        myCartViewModel.loadingHomeStore.observe(requireActivity()) {
-            viewPagerAdapterHomeStore.setDataHomeStore(it)
-        }*/
+    private fun initObserves() {
 
+        myCartViewModel.loadingImages.observe(requireActivity()) {
+            adapterMyCart.setDataMyCart(it)
+        }
+
+    }
+}
 
 
 

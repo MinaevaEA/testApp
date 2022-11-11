@@ -5,16 +5,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.pizza.DataBasket
 import com.example.pizza.DataMyCart
 import com.example.pizza.databinding.FragmentMyCartBinding
 import com.example.pizza.databinding.ItemBestSellerBinding
+import com.example.pizza.databinding.ItemMyCartBinding
 
 class AdapterMyCart :
     RecyclerView.Adapter<AdapterMyCart.ViewHolder>() {
-    private var dataSetSeller = ArrayList<DataMyCart>()
+    private var dataSetSeller = ArrayList<DataBasket>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setDataMyCart(newList: List<DataMyCart>) {
+    fun setDataMyCart(newList: List<DataBasket>) {
         dataSetSeller.clear()
         dataSetSeller.addAll(newList)
         Log.d("1", "setData")
@@ -22,19 +25,18 @@ class AdapterMyCart :
     }
 
     //TODO переименовать
-    class ViewHolder(private val binding: FragmentMyCartBinding) :
+    class ViewHolder(private val binding: ItemMyCartBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: DataMyCart) {
-            binding.textView2.text = data.delivery
-           // binding.description.text = data.price_without_discount.toString()
-           // binding.price.text = data.price_without.toString()
-          //  Glide.with(binding.root.context).load(data.picture).into(binding.imageSeller)
+        fun bind(data: DataBasket) {
+           binding.title.text=data.title
+            binding.price.text = data.price.toString()
+            Glide.with(binding.root.context).load(data.images).into(binding.imageSeller)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = FragmentMyCartBinding.inflate(layoutInflater, parent, false)
+        val binding = ItemMyCartBinding.inflate(layoutInflater, parent, false)
         return ViewHolder(binding)
     }
 

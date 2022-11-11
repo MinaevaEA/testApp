@@ -16,6 +16,9 @@
     <string name="done">Done</string>
     <string name="brand_fl">Brand</string>
     <string name="price_fl">Price</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
     <string name="size_fl">Size</string>
+    <string name="my_cart">My Cart</string>
     <string name="option_fl">Filter options</string>
 </resources>

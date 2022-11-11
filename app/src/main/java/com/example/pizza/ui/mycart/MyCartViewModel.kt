@@ -12,15 +12,15 @@ import kotlinx.coroutines.launch
 class MyCartViewModel(private val dataFromDataBase: DataNetworkMyCartInteract) :
     ViewModel() {
     val loadingProductDetails = MutableLiveData<DataMyCart>()
-    val loadingImages = MutableLiveData<List<String>>()
+    val loadingImages = MutableLiveData<List<DataBasket>>()
     fun onViewCreatedLoadingProductDetails() {
         viewModelScope.launch {
             try {
                 val dataProductDetails = dataFromDataBase.dataMyCartInteract()
-               // val images = dataProductDetails.images
+                val images = dataProductDetails.basket
                 Log.d("5555555", "${dataProductDetails}")
                 loadingProductDetails.postValue(dataProductDetails)
-              //  loadingImages.postValue(images)
+                loadingImages.postValue(images)
 
 
             } catch (e: Exception) {
