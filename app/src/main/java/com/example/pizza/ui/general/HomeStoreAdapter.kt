@@ -9,8 +9,8 @@ import com.bumptech.glide.Glide
 import com.example.pizza.HomeStore
 import com.example.pizza.databinding.ItemHomeStoreBinding
 
-class ViewPagerAdapterHomeStore :
-    RecyclerView.Adapter<ViewPagerAdapterHomeStore.ViewPagerViewHolder>() {
+class HomeStoreAdapter :
+    RecyclerView.Adapter<HomeStoreAdapter.ViewPagerViewHolder>() {
     private var dataSetStore = ArrayList<HomeStore>()
 
     @SuppressLint("NotifyDataSetChanged")
@@ -26,7 +26,7 @@ class ViewPagerAdapterHomeStore :
         fun bind(data: HomeStore) {
             binding.title.text = data.title
             binding.subtitle.text = data.subtitle
-            Glide.with(binding.root.context).load(data.picture).into(binding.imageStore);
+            Glide.with(binding.root.context).load(data.picture).into(binding.imageStore)
         }
     }
 

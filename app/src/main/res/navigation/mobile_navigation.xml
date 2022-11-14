@@ -16,7 +16,7 @@
         tools:layout="@layout/fragment_my_cart"/>
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/product_details"
         android:name="com.example.pizza.ui.product.ProductDetailsFragment"
         tools:layout="@layout/fragment_product_details" />
 </navigation>

@@ -1,5 +1,9 @@
 package com.example.pizza
 
+import android.graphics.drawable.Drawable
+import android.widget.ImageView
+import javax.inject.Named
+
 
 data class HomeStore(
     val id: Int,
@@ -46,17 +50,20 @@ data class DataMyCart(
 
 data class DataBasket(val images: String, val id: Int, val price: Int, val title: String)
 
+@Named("FooDependency")
 class DataSource {
+/*
     private val categoryList = listOf(
-        DataCategory("Phones"),
-        DataCategory("Computer"),
-        DataCategory("Health"),
-        DataCategory("Books"),
-        DataCategory("Phones"),
+        DataCategory("Phones","@drawable/vector"),
+        DataCategory("Computer","@drawable/vector"),
+        DataCategory("Health","@drawable/vector"),
+        DataCategory("Books","@drawable/vector"),
+        DataCategory("Phones","@drawable/vector"),
     )
 
     fun getCategoryList(): List<DataCategory> {
         return categoryList
     }
+*/
 
 }

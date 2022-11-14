@@ -1,6 +1,7 @@
 package com.example.pizza
 
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -18,15 +19,26 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-             val navView: BottomNavigationView = binding.navView
+        val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.explorer, R.id.my_cart, R.id.close_btn, R.id.profile
+                R.id.explorer, R.id.my_cart, R.id.close_btn, R.id.product_details
             )
         )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+
+            if (destination.id == R.id.my_cart) {
+                navView.visibility = View.GONE
+            } else if(destination.id == R.id.product_details){
+                navView.visibility = View.INVISIBLE
+            } else {
+                navView.visibility = View.VISIBLE
+            }
+        }
     }
+
 }

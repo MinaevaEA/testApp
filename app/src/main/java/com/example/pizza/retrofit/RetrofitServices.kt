@@ -20,7 +20,7 @@ interface RetrofitServices {
     @GET("v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149")
     suspend fun getMyCart(): DataMyCart
 
-    companion object {
+/*    companion object {
         private const val baseUrl = "https://run.mocky.io/"
         private var retrofit: Retrofit? = null
 
@@ -33,5 +33,5 @@ interface RetrofitServices {
             }
             return retrofit!!
         }
-    }
+    }*/
 }

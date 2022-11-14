@@ -11,13 +11,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pizza.SubApplication
 import com.example.pizza.databinding.FragmentMyCartBinding
 import com.example.pizza.retrofit.RetrofitServices
-import retrofit2.create
+import javax.inject.Inject
 
 class MyCartFragment : Fragment() {
     private lateinit var binding: FragmentMyCartBinding
-    private lateinit var adapterMyCart: AdapterMyCart
-    private lateinit var retrofitServices: RetrofitServices
+    private lateinit var adapterMyCart: MyCartAdapter
     private lateinit var myCartViewModel: MyCartViewModel
+
+    @Inject
+    lateinit var retrofitServices: RetrofitServices
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,32 +31,27 @@ class MyCartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        retrofitServices =
-            (requireContext().applicationContext as SubApplication).provideDataFromNetwork()
-                .create()
+        val appComponent = (requireContext().applicationContext as SubApplication).appComponent
+        appComponent.getMyCartComponent().injectMyCartFragment(this)
         val dataNetworkInteract = DataNetworkMyCartInteract(retrofitServices)
         val viewModelFactory = MyCartViewModelFactory(dataNetworkInteract)
         myCartViewModel =
             ViewModelProvider(this, viewModelFactory)[MyCartViewModel::class.java]
-        adapterMyCart = AdapterMyCart()
+        adapterMyCart = MyCartAdapter()
         myCartViewModel.onViewCreatedLoadingProductDetails()
         binding.recyclerView1.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView1.adapter = adapterMyCart
         initObserves()
+    }
+
+    private fun initObserves() {
         myCartViewModel.loadingProductDetails.observe(requireActivity()) {
             binding.deliveryFree.text = it.delivery
             binding.priceTotal.text = it.total
         }
-    }
-
-    //TODO apply with
-
-    private fun initObserves() {
-
         myCartViewModel.loadingImages.observe(requireActivity()) {
             adapterMyCart.setDataMyCart(it)
         }
-
     }
 }
 

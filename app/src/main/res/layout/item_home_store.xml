@@ -23,7 +23,7 @@
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/buttom"
+        android:background="@drawable/bottom"
         android:text="@string/btn_by_now"
         android:textColor="@color/black"
         android:textSize="11sp"

@@ -4,37 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.product.ProductDetailsFragment"
-    android:background="#F5F5F5">
+    android:background="#F5F5F5"
+    tools:context=".ui.product.ProductDetailsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/main.appbar"
+        android:layout_width="410dp"
+        android:layout_height="53dp"
+        android:background="#F5F5F5"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            tools:ignore="MissingConstraints">
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <ImageButton
+            android:id="@+id/filter_btn"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/bottom_detail"
+            android:src="@drawable/cart"
+
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/filter_btn2"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_gravity="left|bottom"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-35dp"
+            android:background="@drawable/bottom_navigation_blue"
+            android:src="@drawable/st"
+            app:layout_scrollEffect="@null"
+
+            tools:ignore="ContentDescription" />
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="199dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="384dp"
+        android:layout_height="279dp"
+        android:layout_marginTop="20dp"
         app:layout_anchorGravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main.appbar"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="85dp" />
+        tools:layout_editor_absoluteX="19dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomAppBar"
         android:layout_width="391dp"
         android:layout_height="418dp"
         android:layout_gravity="bottom"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/container_shape"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPagerDetails"
-        app:layout_constraintVertical_bias="0.666"
         tools:ignore="BottomAppBar,MissingConstraints">
-
 
 
         <TextView
             android:id="@+id/title"
-            style="@style/ProductDetails"
+            style="@style/ProductDetailsGeneralTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="38dp"
@@ -44,74 +86,50 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/nav_view"
-            style="@style/Widget.App.BottomNavigationView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:paddingLeft="0dp"
-            android:paddingTop="0dp"
-            android:paddingEnd="20dp"
-            android:paddingRight="0dp"
-            android:textSize="28sp"
-            app:backgroundTint="#FFFFFF"
-            app:elevation="0dp"
-            app:guidelineUseRtl="true"
-            app:itemActiveIndicatorStyle="@style/ThemeOverlay.App.BottomNavigationView"
-            app:itemIconSize="0dp"
-            app:itemPaddingBottom="25dp"
-            app:itemPaddingTop="0dp"
-            app:itemRippleColor="#FF6E4E"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            app:menu="@menu/nav_menu_details" />
-
         <TextView
             android:id="@+id/cpu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="4dp"
             android:textColor="#B7B7B7"
             android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nav_view" />
+            app:layout_constraintTop_toBottomOf="@+id/image_cpu" />
 
         <TextView
             android:id="@+id/camera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
             android:textSize="11sp"
             app:layout_constraintStart_toEndOf="@+id/cpu"
-            app:layout_constraintTop_toBottomOf="@+id/nav_view" />
+            app:layout_constraintTop_toBottomOf="@+id/image_camera" />
 
         <TextView
             android:id="@+id/capacity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="12dp"
             android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nav_view" />
+            app:layout_constraintHorizontal_bias="0.036"
+            app:layout_constraintStart_toEndOf="@+id/sd"
+            app:layout_constraintTop_toBottomOf="@+id/image_capacity" />
 
         <ImageButton
             android:id="@+id/close_btn"
             android:layout_width="33dp"
-            android:layout_height="27dp"
+            android:layout_height="33dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="28dp"
-            android:background="@drawable/buttom_navigation_blue"
-            android:src="?attr/homeAsUpIndicator"
+            android:background="@drawable/bottom_navigation_blue"
+            android:src="@drawable/like"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <Button
             android:id="@+id/done_btn"
@@ -120,7 +138,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="29dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="30dp"
             android:text="@string/btn_add_cart"
             android:textAllCaps="false"
             app:backgroundTint="@null"
@@ -128,19 +146,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/button128"
+            app:layout_constraintVertical_bias="0.32" />
 
         <TextView
             android:id="@+id/sd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
             android:textSize="11sp"
-            app:layout_constraintEnd_toStartOf="@+id/capacity"
-            app:layout_constraintHorizontal_bias="0.426"
             app:layout_constraintStart_toEndOf="@+id/camera"
-            app:layout_constraintTop_toBottomOf="@+id/nav_view" />
+            app:layout_constraintTop_toBottomOf="@+id/image_cd" />
 
         <TextView
             android:id="@+id/total"
@@ -148,7 +165,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:text="@string/select"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -159,61 +176,149 @@
             android:id="@+id/button128"
             android:layout_width="86dp"
             android:layout_height="37dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/buttom"
-            android:text="128 gb"
-            android:textAllCaps="false"
+            android:background="@drawable/bottom"
             android:stateListAnimator="@null"
+            android:text="@string/gb_one"
+            android:textAllCaps="false"
             android:textColor="#8D8D8D"
             android:textSize="13sp"
             app:backgroundTint="@null"
             app:backgroundTintMode="@null"
-            app:layout_constraintBottom_toTopOf="@+id/done_btn"
             app:layout_constraintEnd_toStartOf="@+id/button256"
-            app:layout_constraintTop_toBottomOf="@+id/total"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/total" />
 
         <Button
             android:id="@+id/button256"
             android:layout_width="83dp"
             android:layout_height="38dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="28dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/buttom"
-            android:text="256 gb"
+            android:background="@drawable/bottom"
             android:stateListAnimator="@null"
+            android:text="@string/gb_two"
             android:textAllCaps="false"
             android:textColor="#8D8D8D"
             android:textSize="13sp"
             app:backgroundTint="@null"
             app:backgroundTintMode="@null"
-            app:layout_constraintBottom_toTopOf="@+id/done_btn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/total"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/total" />
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="42dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginBottom="20dp"
             style="@style/ButtonSelectDark"
-            android:src="?attr/actionModeCopyDrawable"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ok"
             app:layout_constraintBottom_toTopOf="@+id/done_btn"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/dark"
             style="@style/ButtonSelectBlue"
-            android:layout_width="44dp"
-            android:layout_height="38dp"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toTopOf="@+id/done_btn"
             app:layout_constraintEnd_toStartOf="@+id/button128"
             app:layout_constraintHorizontal_bias="0.067"
-            app:layout_constraintStart_toEndOf="@+id/imageButton4" />
+            app:layout_constraintStart_toEndOf="@+id/imageButton4"
+            app:layout_constraintTop_toBottomOf="@+id/total"
+            tools:ignore="ContentDescription" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/shop"
+                    style="@style/ProductDetailsTableBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom"
+                    android:padding="5dp"
+                    android:text="@string/title_shop" />
+
+                <Button
+                    android:id="@+id/details"
+                    style="@style/ProductDetailsTableBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom"
+                    android:text="@string/title_details" />
+
+                <Button
+                    android:id="@+id/features"
+                    style="@style/ProductDetailsTableBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom"
+                    android:text="@string/title_features" />
+            </TableRow>
+
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/image_cpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/cpu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <ImageView
+            android:id="@+id/image_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="60dp"
+            android:src="@drawable/foto"
+            app:layout_constraintEnd_toStartOf="@+id/image_cd"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toEndOf="@+id/image_cpu"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <ImageView
+            android:id="@+id/image_cd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="68dp"
+            android:src="@drawable/memory"
+            app:layout_constraintEnd_toStartOf="@+id/image_capacity"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <ImageView
+            android:id="@+id/image_capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/ssd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

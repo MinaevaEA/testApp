@@ -7,13 +7,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.pizza.DataBasket
-import com.example.pizza.DataMyCart
-import com.example.pizza.databinding.FragmentMyCartBinding
-import com.example.pizza.databinding.ItemBestSellerBinding
 import com.example.pizza.databinding.ItemMyCartBinding
 
-class AdapterMyCart :
-    RecyclerView.Adapter<AdapterMyCart.ViewHolder>() {
+class MyCartAdapter :
+    RecyclerView.Adapter<MyCartAdapter.ViewHolder>() {
     private var dataSetSeller = ArrayList<DataBasket>()
 
     @SuppressLint("NotifyDataSetChanged")

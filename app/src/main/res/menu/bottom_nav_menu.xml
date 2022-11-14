@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
     <item
         android:id="@+id/explorer"
-
         android:title="Explorer" />
     <item
         android:id="@+id/my_cart"
@@ -16,7 +15,7 @@
         tools:ignore="MenuTitle" />
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/product_details"
         android:icon="@drawable/ic_notifications_black_24dp"
         tools:ignore="MenuTitle" />
 

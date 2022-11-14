@@ -1,23 +1,17 @@
 package com.example.pizza
 
 import android.app.Application
-import com.example.pizza.retrofit.RetrofitServices
-import retrofit2.Retrofit
+import com.example.pizza.dugger.AppComponent
+import com.example.pizza.dugger.DaggerAppComponent
+import com.example.pizza.ui.general.AppModule
 
 class SubApplication : Application() {
-    private lateinit var dataSource: DataSource
-    private lateinit var dataFromNetwork: Retrofit
 
+    lateinit var appComponent: AppComponent
     override fun onCreate() {
         super.onCreate()
-        dataSource = DataSource()
-        dataFromNetwork = RetrofitServices.getClient()
-    }
-
-    fun provideDataSource(): DataSource {
-        return dataSource
-    }
-    fun provideDataFromNetwork(): Retrofit {
-        return dataFromNetwork
+        appComponent = DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .buildAppComp()
     }
 }

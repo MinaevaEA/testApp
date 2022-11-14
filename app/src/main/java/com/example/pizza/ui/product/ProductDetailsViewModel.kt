@@ -10,6 +10,7 @@ class ProductDetailsViewModel(private val dataFromDataBase: DataNetworkDetailsIn
 
     val loadingProductDetails = MutableLiveData<DataProductDetails>()
     val loadingImages = MutableLiveData<List<String>>()
+    val bottomNavigationViewVisibility = MutableLiveData<Boolean>()
     fun onViewCreatedLoadingProductDetails() {
         viewModelScope.launch {
             try {
@@ -18,6 +19,7 @@ class ProductDetailsViewModel(private val dataFromDataBase: DataNetworkDetailsIn
                 Log.d("11111111", "${dataProductDetails}")
                 loadingProductDetails.postValue(dataProductDetails)
                 loadingImages.postValue(images)
+                bottomNavigationViewVisibility.postValue(false)
 
 
             } catch (e: Exception) {

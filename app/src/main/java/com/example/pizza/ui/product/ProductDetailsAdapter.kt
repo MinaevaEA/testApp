@@ -6,14 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.pizza.DataProductDetails
-import com.example.pizza.HomeStore
-import com.example.pizza.databinding.FragmentProductDetailsBinding
-import com.example.pizza.databinding.ItemHomeStoreBinding
 import com.example.pizza.databinding.ItemPageProductDetailsBinding
 
-class ViewPagerAdapterProductDetails :
-    RecyclerView.Adapter<ViewPagerAdapterProductDetails.ViewPagerViewHolder>() {
+class ProductDetailsAdapter :
+    RecyclerView.Adapter<ProductDetailsAdapter.ViewPagerViewHolder>() {
     private var dataSetStore = ArrayList<String>()
     @SuppressLint("NotifyDataSetChanged")
     fun setDataProductDetails(newList: List<String>) {
@@ -26,10 +22,6 @@ class ViewPagerAdapterProductDetails :
    class ViewPagerViewHolder(private val binding: ItemPageProductDetailsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: String) {
-           // binding.title.text = data.title
-          //  binding.description.text = data.price_without_discount.toString()
-           // binding.price.text = data.price_without.toString()
-           // binding.button.text = data.title
             Glide.with(binding.root.context).load(data).into(binding.imageModel);
         }
     }

@@ -12,7 +12,7 @@
         android:title="@string/title_details" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation"
         android:title="@string/title_features" />
 
 </menu>

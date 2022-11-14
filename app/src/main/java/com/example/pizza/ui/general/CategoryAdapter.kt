@@ -5,11 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.pizza.DataCategory
 import com.example.pizza.databinding.ItemCategoryBinding
 
-class AdapterCategory :
-    RecyclerView.Adapter<AdapterCategory.MyViewHolder>() {
+class CategoryAdapter :
+    RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
     private val dataSetCategory = ArrayList<DataCategory>()
 
     @SuppressLint("NotifyDataSetChanged")
@@ -25,6 +26,7 @@ class AdapterCategory :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataCategory) {
             binding.category.text = data.category
+           // Glide.with(binding.root.context).load(data.images).into(binding.imageButton3)
         }
     }
 
