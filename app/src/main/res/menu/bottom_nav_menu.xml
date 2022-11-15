@@ -3,20 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools">
     <item
         android:id="@+id/explorer"
-        android:title="Explorer" />
+        android:title="Explorer"
+        tools:ignore="MenuIcon"
+        android:layout_gravity="center|bottom"/>
     <item
         android:id="@+id/my_cart"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/cart"
         tools:ignore="MenuTitle" />
 
     <item
         android:id="@+id/close_btn"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/like"
         tools:ignore="MenuTitle" />
 
     <item
         android:id="@+id/product_details"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/profile"
         tools:ignore="MenuTitle" />
 
 </menu>

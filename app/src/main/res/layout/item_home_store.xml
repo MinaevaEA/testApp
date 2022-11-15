@@ -15,21 +15,23 @@
         android:scaleType="matrix"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="168dp"
-        android:layout_height="209dp"
-        android:layout_marginStart="3dp"
+        android:layout_width="162dp"
+        android:layout_height="207dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/gradient_for_hot_sales"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/image_store"
         app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/image_store"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints"
-        android:background="@drawable/gradient_for_hot_sales">
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/button"
@@ -82,9 +84,7 @@
             android:id="@+id/imageView"
             android:layout_width="41dp"
             android:layout_height="36dp"
-
             android:layout_marginTop="16dp"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.149"
             app:layout_constraintStart_toStartOf="parent"

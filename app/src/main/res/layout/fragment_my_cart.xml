@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="@string/my_cart"
         android:textSize="35sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,8 +71,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomAppBar"
-        android:layout_width="414dp"
-        android:layout_height="552dp"
+        android:layout_width="415dp"
+        android:layout_height="507dp"
         android:layout_gravity="bottom"
         android:background="@drawable/container_shape_my_cart"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -109,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="60dp"
             android:text="@string/total"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView1" />
@@ -144,10 +144,10 @@
             style="@style/TextMyCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="52dp"
             android:text="TextView1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.843"
+            app:layout_constraintHorizontal_bias="0.833"
             app:layout_constraintStart_toEndOf="@+id/total"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView1" />
 

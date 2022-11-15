@@ -4,9 +4,12 @@ import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.content.res.ResourcesCompat.getColor
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.pizza.BestSeller
+import com.example.pizza.R
 import com.example.pizza.databinding.ItemBestSellerBinding
 
 class AdapterBestSeller(private val currencyAdapterListener: ViewListener) :

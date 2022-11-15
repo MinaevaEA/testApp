@@ -14,6 +14,6 @@ class DataCategoryModule {
             DataCategory("Computer"),
             DataCategory("Health"),
             DataCategory("Books"),
-            DataCategory("Phones",))
+            DataCategory("Phones"))
     }
 }

@@ -26,7 +26,7 @@ class CategoryAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataCategory) {
             binding.category.text = data.category
-           // Glide.with(binding.root.context).load(data.images).into(binding.imageButton3)
+                //Glide.with(binding.root.context).load(data.images).into(binding.imageButton3)
         }
     }
 

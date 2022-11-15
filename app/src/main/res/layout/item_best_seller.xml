@@ -62,4 +62,17 @@
         tools:layout_editor_absoluteY="4dp"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <ImageView
+        android:id="@+id/like_phone"
+        android:layout_width="25dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_category"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/like_orange"
+        tools:ignore="UseAppTint" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

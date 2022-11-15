@@ -74,6 +74,7 @@ class GeneralScreenFragment : Fragment(), ViewListener {
              generalScreenViewModel.openFilter.observe(requireActivity()){
                  openFilter()
              }
+
         }
     }
 
