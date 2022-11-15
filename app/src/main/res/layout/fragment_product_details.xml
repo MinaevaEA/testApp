@@ -34,7 +34,6 @@
             android:layout_marginEnd="28dp"
             android:background="@drawable/bottom_detail"
             android:src="@drawable/cart"
-
             tools:ignore="ContentDescription" />
 
         <ImageButton

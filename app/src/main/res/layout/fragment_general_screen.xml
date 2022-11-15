@@ -30,15 +30,19 @@
             android:layout_marginEnd="28dp"
             android:background="@color/background"
             android:layout_gravity="right"
-            app:srcCompat="@drawable/ic_home_black_24dp"
+            app:srcCompat="@drawable/filter"
             tools:ignore="ContentDescription" />
 
         <Spinner
             android:id="@+id/spinner2"
-            android:layout_width="162dp"
+            android:layout_width="189dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            />
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="-25dp"
+            android:fontFamily="@font/mark_pro"
+            android:text="wwwww"
+            android:textColor="@color/title"
+            android:textSize="15sp" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -58,8 +62,8 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager"
                 android:layout_width="wrap_content"
-                android:layout_height="199dp"
-                android:layout_marginTop="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/bottom"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.133"
@@ -73,7 +77,7 @@
                 android:layout_height="372dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/best_seller"
                 tools:ignore="MissingConstraints" />
@@ -82,7 +86,7 @@
                 android:id="@+id/recyclerViewCategory"
                 android:layout_width="453dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="27dp"
+                android:layout_marginStart="17dp"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -92,13 +96,13 @@
 
             <android.widget.SearchView
                 android:id="@+id/searchView"
-                android:layout_width="288dp"
-                android:layout_height="31dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="302dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/search"
                 android:color="@color/general_orange"
                 app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-                app:layout_constraintHorizontal_bias="0.954"
+                app:layout_constraintHorizontal_bias="0.433"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategory"
                 tools:ignore="MissingConstraints" />
@@ -108,7 +112,7 @@
                 style="@style/GeneralTitleBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/hot_sales"
                 app:layout_constraintStart_toStartOf="parent"
@@ -117,14 +121,14 @@
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:layout_width="55dp"
-                android:layout_height="43dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="8dp"
-                android:background="@color/background"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shape_qr"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategory"
-                app:srcCompat="@drawable/shape_qr"
+                app:srcCompat="@drawable/qr"
                 tools:ignore="ContentDescription,MissingConstraints" />
 
             <TextView
@@ -132,7 +136,7 @@
                 style="@style/GeneralTitleBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="15dp"
                 android:text="@string/select_ct"
                 app:layout_constraintStart_toStartOf="parent"
@@ -144,8 +148,8 @@
                 style="@style/GeneralTitleBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/best_seller"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viewPager" />
@@ -217,7 +221,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

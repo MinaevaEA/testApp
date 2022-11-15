@@ -26,8 +26,8 @@ class AdapterBestSeller(private val currencyAdapterListener: ViewListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: BestSeller) {
             binding.title.text = data.title
-            binding.description.text = data.price_without_discount.toString()
-            binding.price.text = data.price_without.toString()
+            binding.price.text = data.discount_price.toString()
+            binding.priceWithDiscnt.text = data.price_without_discount.toString()
             Glide.with(binding.root.context).load(data.picture).into(binding.imageSeller)
         }
     }

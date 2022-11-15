@@ -26,7 +26,7 @@ class MyCartAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataBasket) {
            binding.title.text=data.title
-            binding.price.text = data.price.toString()
+            binding.priceCart.text = data.price.toString()
             Glide.with(binding.root.context).load(data.images).into(binding.imageSeller)
         }
     }

@@ -19,7 +19,7 @@ data class BestSeller(
     val is_favorite: Boolean,
     val title: String,
     val price_without_discount: Int,
-    val price_without: Int,
+    val discount_price: Int,
     val picture: String
 )
 

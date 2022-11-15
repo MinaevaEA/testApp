@@ -10,63 +10,87 @@
         style="@style/ViewPager"
         android:layout_width="397dp"
         android:layout_height="211dp"
-        android:paddingStart="10dp"
+        android:background="@drawable/container_shape_hot_sales"
+        android:padding="15dp"
         android:scaleType="matrix"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="99dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bottom"
-        android:text="@string/btn_by_now"
-        android:textColor="@color/black"
-        android:textSize="11sp"
-        android:textAllCaps="false"
-        app:backgroundTint="@null"
-        app:backgroundTintMode="@null"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="41dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-
-        android:layout_marginTop="20dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="168dp"
+        android:layout_height="209dp"
+        android:layout_marginStart="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/image_store"
+        app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/image_store"
-        app:srcCompat="@drawable/shape"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/gradient_for_hot_sales">
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="97dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bottom"
+            android:paddingLeft="@null"
+            android:paddingTop="@null"
+            android:paddingRight="@null"
+            android:paddingBottom="@null"
+            android:text="@string/btn_by_now"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:backgroundTint="@null"
+            app:backgroundTintMode="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtitle"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/mark_pro_b"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/mark_pro_reg"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="41dp"
+            android:layout_height="36dp"
+
+            android:layout_marginTop="16dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.149"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/shape"
+            tools:ignore="ContentDescription,MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
