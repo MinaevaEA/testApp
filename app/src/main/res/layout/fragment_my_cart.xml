@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.mycart.MyCartFragment"
-
     android:background="#F5F5F5">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/main.appbar"
@@ -25,26 +24,37 @@
 
     <ImageButton
         android:id="@+id/filter_btn"
-        android:layout_width="32dp"
-        android:layout_height="35dp"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_gravity="right"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="28dp"
-        android:background="@color/background"
-        android:layout_gravity="right"
-        app:srcCompat="@drawable/ic_home_black_24dp"
-        tools:ignore="ContentDescription" />
+        android:background="@drawable/bottom_detail"
+        android:src="@drawable/loc" />
 
         <ImageButton
             android:id="@+id/filter_btn2"
-            android:layout_width="47dp"
-            android:layout_height="36dp"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
             android:layout_gravity="left|bottom"
             android:layout_marginStart="16dp"
             android:layout_marginTop="-35dp"
-            android:background="@color/background"
+            android:background="@drawable/bottom_navigation_blue"
+            android:src="@drawable/st"
             app:layout_scrollEffect="@null"
-            app:srcCompat="@drawable/ic_home_black_24dp"
             tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginTop="-25dp"
+            android:fontFamily="@font/mark_pro"
+            android:textSize="15sp"
+            android:textColor="@color/title"
+            android:layout_marginEnd="70dp"
+            android:text="@string/title_loc" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
@@ -53,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:text="@string/my_cart"
         android:textSize="35sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,8 +71,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomAppBar"
-        android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_width="414dp"
+        android:layout_height="552dp"
         android:layout_gravity="bottom"
         android:background="@drawable/container_shape_my_cart"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,9 +80,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="BottomAppBar,MissingConstraints"
-        >
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="BottomAppBar,MissingConstraints">
 
 
         <Button
@@ -83,7 +92,7 @@
             android:layout_marginStart="29dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="48dp"
-            android:text="@string/btn_add_cart"
+            android:text="@string/btn_checkout"
             android:textAllCaps="false"
             app:backgroundTint="@null"
             app:backgroundTintMode="@null"
@@ -92,7 +101,7 @@
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/delivery"
-            app:layout_constraintVertical_bias="0.264" />
+            app:layout_constraintVertical_bias="0.958" />
 
         <TextView
             android:id="@+id/total"
@@ -100,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="76dp"
             android:text="@string/total"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView1" />
@@ -135,7 +144,7 @@
             style="@style/TextMyCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="76dp"
             android:text="TextView1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.843"
@@ -155,7 +164,21 @@
             app:layout_constraintTop_toBottomOf="@+id/price_total"
             app:layout_constraintVertical_bias="0.004" />
 
+        <androidx.constraintlayout.widget.Barrier
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="355dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="104dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

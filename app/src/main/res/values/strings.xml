@@ -23,4 +23,7 @@
     <string name="option_fl">Filter options</string>
     <string name="gb_one" >128 GB</string>
     <string name="gb_two" >256 GB</string>
+    <string name="title_loc" >Add address</string>
+    <string name="title_product" >Product Details</string>
+    <string name="btn_checkout" >Checkout</string>
 </resources>

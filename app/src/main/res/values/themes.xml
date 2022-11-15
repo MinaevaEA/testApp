@@ -58,10 +58,12 @@
     <style name="TitleMinMyCart" parent="TitleMin">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/mark_pro_med</item>
     </style>
     <style name="TitleMinMyCartPrice" parent="TitleMin">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/general_orange</item>
+        <item name="fontFamily">@font/mark_pro_med</item>
     </style>
 
 

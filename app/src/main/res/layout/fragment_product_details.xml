@@ -47,8 +47,17 @@
             android:background="@drawable/bottom_navigation_blue"
             android:src="@drawable/st"
             app:layout_scrollEffect="@null"
-
             tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="-25dp"
+            android:fontFamily="@font/mark_pro"
+            android:textSize="18sp"
+            android:textColor="@color/title"
+            android:text="@string/title_product"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2
