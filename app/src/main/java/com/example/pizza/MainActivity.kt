@@ -39,6 +39,13 @@ class MainActivity : AppCompatActivity() {
                 navView.visibility = View.VISIBLE
             }
         }
+        val badge = navView.getOrCreateBadge(R.id.my_cart)
+        if (badge != null) {
+            badge.isVisible = true
+            badge.number = 2
+        }else{
+            badge.isVisible = false
+        }
     }
 
 }
