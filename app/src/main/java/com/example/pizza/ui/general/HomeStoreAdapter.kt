@@ -3,6 +3,7 @@ package com.example.pizza.ui.general
 import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -27,6 +28,11 @@ class HomeStoreAdapter :
             binding.title.text = data.title
             binding.subtitle.text = data.subtitle
             Glide.with(binding.root.context).load(data.picture).into(binding.imageStore)
+            if (data.is_new){
+                binding.isNew.visibility = View.VISIBLE
+            }else{
+                binding.isNew.visibility = View.INVISIBLE
+            }
         }
     }
 

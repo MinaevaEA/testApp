@@ -62,7 +62,7 @@
         tools:layout_editor_absoluteY="4dp"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageView
+    <CheckBox
         android:id="@+id/like_phone"
         android:layout_width="25dp"
         android:layout_height="26dp"
@@ -72,7 +72,8 @@
         android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/like_orange"
+        android:theme="@style/MyRadioButtonCheck"
+        android:button="@drawable/selector_best_seller"
         tools:ignore="UseAppTint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

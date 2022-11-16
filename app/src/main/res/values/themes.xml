@@ -67,9 +67,16 @@
     </style>
 
     <style name="MyRadioButton" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">@android:color/holo_green_light</item>
+        <item name="colorControlNormal">@color/white</item>
         <item name="colorControlActivated">@android:color/holo_orange_dark</item>
+        <item name="backgroundColor">@android:color/holo_orange_dark</item>
     </style>
+    <style name="MyRadioButtonCheck" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@android:color/holo_orange_dark</item>
+        <item name="backgroundColor">@android:color/holo_orange_dark</item>
+    </style>
+
     <style name="ButtonGeneral">
         <item name="android:background">@drawable/bottom_detail</item>
     </style>

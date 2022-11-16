@@ -10,12 +10,13 @@
         style="@style/ViewPager"
         android:layout_width="397dp"
         android:layout_height="211dp"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/container_shape_hot_sales"
-        android:padding="15dp"
+        android:padding="10dp"
         android:scaleType="matrix"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints" />
 
@@ -58,21 +59,21 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/mark_pro_b"
             android:textColor="@color/white"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/is_new"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/mark_pro_reg"
             android:textColor="@color/white"
             android:textSize="11sp"
@@ -81,15 +82,15 @@
             tools:ignore="MissingConstraints" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/is_new"
             android:layout_width="41dp"
             android:layout_height="36dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.149"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/shape"
+            app:srcCompat="@drawable/new_a"
             tools:ignore="ContentDescription,MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

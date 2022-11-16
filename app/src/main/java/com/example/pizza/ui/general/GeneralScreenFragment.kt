@@ -61,11 +61,12 @@ class GeneralScreenFragment : Fragment(), ViewListener {
         adapterBestSeller = AdapterBestSeller(this)
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapterBestSeller
-        adapterCategory = CategoryAdapter()
+
         binding.recyclerViewCategory.layoutManager = LinearLayoutManager(requireContext())
         //TODO покопаться
         (binding.recyclerViewCategory.layoutManager as LinearLayoutManager).orientation =
             LinearLayoutManager.HORIZONTAL
+        adapterCategory = CategoryAdapter()
         binding.recyclerViewCategory.adapter = adapterCategory
         binding.viewPager.adapter = viewPagerAdapterHomeStore
         setUpViewPager()

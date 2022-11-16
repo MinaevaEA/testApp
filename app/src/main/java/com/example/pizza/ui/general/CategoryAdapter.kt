@@ -5,9 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.pizza.DataCategory
 import com.example.pizza.databinding.ItemCategoryBinding
+
 
 class CategoryAdapter :
     RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
@@ -26,7 +26,6 @@ class CategoryAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataCategory) {
             binding.category.text = data.category
-                //Glide.with(binding.root.context).load(data.images).into(binding.imageButton3)
         }
     }
 

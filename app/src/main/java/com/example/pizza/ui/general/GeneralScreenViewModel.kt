@@ -12,6 +12,7 @@ class GeneralScreenViewModel(private val dataFromDataBase: DataNetworkInteract) 
     ViewModel() {
     val loadingListBestSeller = MutableLiveData<List<BestSeller>>()
     val loadingListCategory = MutableLiveData<List<DataCategory>>()
+
     val loadingHomeStore = MutableLiveData<List<HomeStore>>()
     val openProductDetails = SingleLiveEvent<String>()
     val openFilter = SingleLiveEvent<Unit>()

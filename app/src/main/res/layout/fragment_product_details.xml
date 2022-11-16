@@ -47,6 +47,7 @@
             android:src="@drawable/st"
             app:layout_scrollEffect="@null"
             tools:ignore="ContentDescription" />
+
         <TextView
             android:id="@+id/address"
             android:layout_width="wrap_content"
@@ -54,9 +55,9 @@
             android:layout_gravity="center|bottom"
             android:layout_marginTop="-25dp"
             android:fontFamily="@font/mark_pro"
-            android:textSize="18sp"
+            android:text="@string/title_product"
             android:textColor="@color/title"
-            android:text="@string/title_product"/>
+            android:textSize="18sp" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2
@@ -156,8 +157,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button128"
-            app:layout_constraintVertical_bias="0.32" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/sd"
@@ -182,67 +183,88 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cpu" />
 
-        <Button
-            android:id="@+id/button128"
-            android:layout_width="86dp"
-            android:layout_height="37dp"
-            android:layout_marginTop="10dp"
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/bottom"
-            android:stateListAnimator="@null"
-            android:text="@string/gb_one"
-            android:textAllCaps="false"
-            android:textColor="#8D8D8D"
-            android:textSize="13sp"
-            app:backgroundTint="@null"
-            app:backgroundTintMode="@null"
-            app:layout_constraintEnd_toStartOf="@+id/button256"
-            app:layout_constraintTop_toBottomOf="@+id/total" />
-
-        <Button
-            android:id="@+id/button256"
-            android:layout_width="83dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="28dp"
-            android:background="@drawable/bottom"
-            android:stateListAnimator="@null"
-            android:text="@string/gb_two"
-            android:textAllCaps="false"
-            android:textColor="#8D8D8D"
-            android:textSize="13sp"
-            app:backgroundTint="@null"
-            app:backgroundTintMode="@null"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/total" />
+            app:layout_constraintHorizontal_bias="0.724"
+            app:layout_constraintStart_toEndOf="@+id/radioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/total">
 
-        <ImageButton
-            android:id="@+id/imageButton4"
-            style="@style/ButtonSelectDark"
-            android:layout_width="34dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/ok"
+            <RadioButton
+                android:id="@+id/button128"
+                android:layout_width="86dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/selector_memory_details"
+                android:button="@null"
+                android:paddingStart="20dp"
+                android:stateListAnimator="@null"
+                android:text="@string/gb_one"
+                android:textAllCaps="false"
+                android:textColor="#8D8D8D"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@+id/button256"
+                app:layout_constraintTop_toBottomOf="@+id/total" />
+
+            <RadioButton
+                android:id="@+id/button256"
+                android:layout_width="83dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/selector_memory_details"
+                android:button="@null"
+                android:paddingStart="20dp"
+                android:stateListAnimator="@null"
+                android:text="@string/gb_two"
+                android:textAllCaps="false"
+                android:textColor="#8D8D8D"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/total" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/dark_radio"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/done_btn"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/total"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/total">
 
-        <ImageButton
-            android:id="@+id/dark"
-            style="@style/ButtonSelectBlue"
-            android:layout_width="34dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/done_btn"
-            app:layout_constraintEnd_toStartOf="@+id/button128"
-            app:layout_constraintHorizontal_bias="0.067"
-            app:layout_constraintStart_toEndOf="@+id/imageButton4"
-            app:layout_constraintTop_toBottomOf="@+id/total"
-            tools:ignore="ContentDescription" />
+            <RadioButton
+                android:id="@+id/dark_radio"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bottom_select_color_darck"
+                android:button="@drawable/checkbox_selector_details"
+                android:theme="@style/MyRadioButton"
+                android:gravity="center"
+                tools:ignore="ContentDescription" />
+
+            <RadioButton
+                android:id="@+id/dark"
+                style="@style/ButtonSelectBlue"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:button="@drawable/checkbox_selector_details"
+                android:theme="@style/MyRadioButtonCheck"
+                tools:ignore="ContentDescription" />
+        </RadioGroup>
 
         <TableLayout
             android:id="@+id/tableLayout"
@@ -258,35 +280,47 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-             >
+                android:checkedButton="@id/shop"
+                android:orientation="horizontal">
+
                 <RadioButton
-                    android:id="@+id/radio_red"
-                    android:layout_width="match_parent"
+                    android:id="@+id/shop"
+                    style="@style/ProductDetailsTableBottom"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:theme="@style/MyRadioButton"
-                    android:layout_marginLeft="24dp"
-                    android:text="@string/title_details"
-                    android:layout_weight="1" />
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_details"
+                    android:button="@null"
+                    android:padding="10dp"
+                    android:text="@string/title_shop"
+                    android:theme="@style/MyRadioButton" />
 
                 <RadioButton
                     android:id="@+id/radio_blue"
-                    android:layout_width="match_parent"
+                    style="@style/ProductDetailsTableBottom"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:theme="@style/MyRadioButton"
-                    android:layout_marginLeft="24dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_details"
+                    android:button="@null"
+                    android:padding="10dp"
                     android:text="@string/title_details"
-                    android:layout_weight="1" />
+                    android:theme="@style/MyRadioButton" />
 
                 <RadioButton
                     android:id="@+id/radio_gray"
-                    android:layout_width="match_parent"
+                    style="@style/ProductDetailsTableBottom"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-
-                    android:text="@string/title_details"
+                    android:layout_marginLeft="4dp"
                     android:layout_weight="1"
-                    android:checked="true" />
+                    android:background="@drawable/selector_details"
+                    android:button="@null"
+                    android:padding="10dp"
+                    android:text="@string/title_features"
+                    android:theme="@style/MyRadioButton" />
             </RadioGroup>
 
         </TableLayout>
