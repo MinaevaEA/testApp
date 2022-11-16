@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.pizza.R
 import com.example.pizza.SubApplication
 import com.example.pizza.databinding.FragmentProductDetailsBinding
@@ -50,20 +51,23 @@ class ProductDetailsFragment : Fragment() {
             binding.sd.text = it.sd
 
         }
+        binding.backBtn.setOnClickListener {
+            productDetailsViewModel.backToMain.observe(requireActivity()) {
+                backToMain()
+            }
+        }
         binding.viewPagerDetails.adapter = viewPagerAdapterProductDetails
         productDetailsViewModel.loadingImages.observe(requireActivity()) {
             viewPagerAdapterProductDetails.setDataProductDetails(it)
         }
-        productDetailsViewModel.bottomNavigationViewVisibility.observe(requireActivity()) {
-            //setVisibility(it, binding.navView)
-        }
-    }
-    private fun setVisibility(isVisible: Boolean, view: View) {
-        val visibility = if (isVisible) View.VISIBLE else View.INVISIBLE
-        view.visibility = visibility
     }
 
-    companion object {
-        fun newInstance(CPU: String): ProductDetailsFragment = ProductDetailsFragment()
+
+    private fun backToMain() {
+        findNavController().navigate(R.id.navigation_home)
+        /*  requireActivity().supportFragmentManager.beginTransaction()
+              .addToBackStack(null)
+              .replace(R.id.container, ProductDetailsFragment.newInstance(CPU))
+              .commit()*/
     }
 }

@@ -103,8 +103,6 @@ class GeneralScreenFragment : Fragment(), ViewListener {
     override fun onClicked(position: String) {
         generalScreenViewModel.onClickedDetail(position)
     }
-
-    //TODO разобраться со стеком
     private fun openProductDetails(CPU: String) {
         findNavController().navigate(R.id.product_details)
       /*  requireActivity().supportFragmentManager.beginTransaction()

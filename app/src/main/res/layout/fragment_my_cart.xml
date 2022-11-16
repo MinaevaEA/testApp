@@ -33,7 +33,7 @@
         android:src="@drawable/loc" />
 
         <ImageButton
-            android:id="@+id/filter_btn2"
+            android:id="@+id/back_btn"
             android:layout_width="33dp"
             android:layout_height="33dp"
             android:layout_gravity="left|bottom"

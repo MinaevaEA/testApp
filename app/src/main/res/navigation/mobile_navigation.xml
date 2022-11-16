@@ -19,4 +19,8 @@
         android:id="@+id/product_details"
         android:name="com.example.pizza.ui.product.ProductDetailsFragment"
         tools:layout="@layout/fragment_product_details" />
+    <fragment
+        android:id="@+id/geneeral"
+        android:name="com.example.pizza.ui.product.ProductDetailsFragment"
+        tools:layout="@layout/fragment_general_screen" />
 </navigation>

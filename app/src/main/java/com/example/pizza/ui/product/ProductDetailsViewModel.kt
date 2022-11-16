@@ -3,6 +3,7 @@ package com.example.pizza.ui.product
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.pizza.DataProductDetails
+import com.example.pizza.SingleLiveEvent
 import kotlinx.coroutines.launch
 
 class ProductDetailsViewModel(private val dataFromDataBase: DataNetworkDetailsInteract) :
@@ -10,7 +11,7 @@ class ProductDetailsViewModel(private val dataFromDataBase: DataNetworkDetailsIn
 
     val loadingProductDetails = MutableLiveData<DataProductDetails>()
     val loadingImages = MutableLiveData<List<String>>()
-    val bottomNavigationViewVisibility = MutableLiveData<Boolean>()
+     val backToMain = SingleLiveEvent<Unit>()
     fun onViewCreatedLoadingProductDetails() {
         viewModelScope.launch {
             try {
@@ -19,8 +20,7 @@ class ProductDetailsViewModel(private val dataFromDataBase: DataNetworkDetailsIn
                 Log.d("11111111", "${dataProductDetails}")
                 loadingProductDetails.postValue(dataProductDetails)
                 loadingImages.postValue(images)
-                bottomNavigationViewVisibility.postValue(false)
-
+                backToMain.postValue(Unit)
 
             } catch (e: Exception) {
                 Log.d("101010101", "$e")

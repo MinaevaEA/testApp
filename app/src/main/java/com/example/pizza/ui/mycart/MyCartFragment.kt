@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.pizza.R
 import com.example.pizza.SubApplication
 import com.example.pizza.databinding.FragmentMyCartBinding
 import com.example.pizza.retrofit.RetrofitServices
@@ -42,6 +44,11 @@ class MyCartFragment : Fragment() {
         binding.recyclerView1.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView1.adapter = adapterMyCart
         initObserves()
+        binding.backBtn.setOnClickListener {
+            myCartViewModel.backToMain.observe(requireActivity()) {
+                backToMain()
+            }
+        }
     }
 
     private fun initObserves() {
@@ -52,6 +59,15 @@ class MyCartFragment : Fragment() {
         myCartViewModel.loadingImages.observe(requireActivity()) {
             adapterMyCart.setDataMyCart(it)
         }
+
+    }
+
+    private fun backToMain() {
+        findNavController().navigate(R.id.navigation_home)
+        /*  requireActivity().supportFragmentManager.beginTransaction()
+              .addToBackStack(null)
+              .replace(R.id.container, ProductDetailsFragment.newInstance(CPU))
+              .commit()*/
     }
 }
 

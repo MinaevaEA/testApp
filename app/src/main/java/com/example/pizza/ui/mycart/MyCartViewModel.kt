@@ -13,6 +13,7 @@ class MyCartViewModel(private val dataFromDataBase: DataNetworkMyCartInteract) :
     ViewModel() {
     val loadingProductDetails = MutableLiveData<DataMyCart>()
     val loadingImages = MutableLiveData<List<DataBasket>>()
+    val backToMain = SingleLiveEvent<Unit>()
     fun onViewCreatedLoadingProductDetails() {
         viewModelScope.launch {
             try {
@@ -21,6 +22,7 @@ class MyCartViewModel(private val dataFromDataBase: DataNetworkMyCartInteract) :
                 Log.d("5555555", "${dataProductDetails}")
                 loadingProductDetails.postValue(dataProductDetails)
                 loadingImages.postValue(images)
+                backToMain.postValue(Unit)
 
 
             } catch (e: Exception) {
