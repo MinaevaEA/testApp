@@ -101,6 +101,8 @@
         <item name="fontFamily">@font/mark_pro_heavy</item>
         <item name="itemIconTint">@drawable/bottom_navigation_background_color</item>
         <item name="android:textSize">28sp</item>
+        <item name="enforceTextAppearance">false</item>
+
     </style>
     <style name="Background">
         <item name="backgroundColor">@color/background</item>

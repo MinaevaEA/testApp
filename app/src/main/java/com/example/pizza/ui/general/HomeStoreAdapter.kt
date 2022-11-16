@@ -28,9 +28,9 @@ class HomeStoreAdapter :
             binding.title.text = data.title
             binding.subtitle.text = data.subtitle
             Glide.with(binding.root.context).load(data.picture).into(binding.imageStore)
-            if (data.is_new){
+            if (data.is_new) {
                 binding.isNew.visibility = View.VISIBLE
-            }else{
+            } else {
                 binding.isNew.visibility = View.INVISIBLE
             }
         }
@@ -45,7 +45,6 @@ class HomeStoreAdapter :
             parent,
             false
         )
-
         return ViewPagerViewHolder(binding)
     }
 
