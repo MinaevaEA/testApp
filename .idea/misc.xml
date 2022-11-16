@@ -9,6 +9,8 @@
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/bottom.xml" value="0.10925925925925926" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/bottom_detail.xml" value="0.10925925925925926" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/bottom_navigation_background_color.xml" value="0.10925925925925926" />
+        <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/bottom_select_color_blue.xml" value="0.12962962962962962" />
+        <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/bottom_select_color_darck.xml" value="0.12962962962962962" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/buttom.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/buttom_detail.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/buttom_navigation_background_color.xml" value="0.18385416666666668" />
@@ -27,7 +29,10 @@
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/line_for_botton_table_details.xml" value="0.13425925925925927" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/line_spinner_filter.xml" value="0.12685185185185185" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/menu.xml" value="0.13148148148148148" />
+        <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/radio_buttom_details.xml" value="0.12962962962962962" />
+        <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/radio_button_details.xml" value="0.12962962962962962" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/search.xml" value="0.13148148148148148" />
+        <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/selector_details.xml" value="0.12962962962962962" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/shape.xml" value="0.26205128205128203" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/shape_category.xml" value="0.13148148148148148" />
         <entry key="..\:/Users/Evgenia/AndroidStudioProjects/testApp/app/src/main/res/drawable/shape_qr.xml" value="0.13148148148148148" />

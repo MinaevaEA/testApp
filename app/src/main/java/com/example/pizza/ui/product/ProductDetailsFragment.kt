@@ -48,13 +48,13 @@ class ProductDetailsFragment : Fragment() {
             binding.camera.text = it.camera
             binding.capacity.text = it.capacity[0]
             binding.sd.text = it.sd
-            binding.shop.setOnClickListener {
+        /*    binding.shop.setOnClickListener {
                 it.background = ResourcesCompat.getDrawable(
                     resources,
                     R.drawable.line_for_botton_table_details,
                     null
                 )
-            }
+            }*/
             binding.button128.setOnClickListener {
                 it.background =
                     ResourcesCompat.getDrawable(resources, R.drawable.bottom_detail, null)

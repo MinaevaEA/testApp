@@ -255,36 +255,39 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title">
 
-            <TableRow
+            <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:ignore="UselessParent">
-
-                <Button
-                    android:id="@+id/shop"
-                    style="@style/ProductDetailsTableBottom"
-                    android:layout_width="wrap_content"
+                android:orientation="horizontal"
+             >
+                <RadioButton
+                    android:id="@+id/radio_red"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bottom"
-                    android:padding="5dp"
-                    android:text="@string/title_shop" />
+                    android:theme="@style/MyRadioButton"
+                    android:layout_marginLeft="24dp"
+                    android:text="@string/title_details"
+                    android:layout_weight="1" />
 
-                <Button
-                    android:id="@+id/details"
-                    style="@style/ProductDetailsTableBottom"
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/radio_blue"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bottom"
-                    android:text="@string/title_details" />
+                    android:theme="@style/MyRadioButton"
+                    android:layout_marginLeft="24dp"
+                    android:text="@string/title_details"
+                    android:layout_weight="1" />
 
-                <Button
-                    android:id="@+id/features"
-                    style="@style/ProductDetailsTableBottom"
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/radio_gray"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bottom"
-                    android:text="@string/title_features" />
-            </TableRow>
+                    android:layout_marginLeft="24dp"
+
+                    android:text="@string/title_details"
+                    android:layout_weight="1"
+                    android:checked="true" />
+            </RadioGroup>
 
         </TableLayout>
 
