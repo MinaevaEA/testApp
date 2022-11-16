@@ -3,6 +3,8 @@ package com.example.pizza.ui.general
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
@@ -28,6 +30,8 @@ class FilterOptionDialog: DialogFragment() {
             super.onStart()
             val window = dialog?.window
             window?.setGravity(Gravity.BOTTOM)
+            window?.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             val params = window?.attributes
             params?.x = 300
             params?.y = 0
