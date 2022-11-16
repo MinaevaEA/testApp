@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">testSamsung</string>
     <string name="title_shop">Shop</string>
     <string name="title_details">Details</string>
@@ -26,4 +26,16 @@
     <string name="title_loc" >Add address</string>
     <string name="title_product" >Product Details</string>
     <string name="btn_checkout" >Checkout</string>
+    <string-array name="brand">
+        <item>Samsung</item>
+        <item>Iphone</item>
+    </string-array>
+    <string-array name="price">
+        <item tools:ignore="TypographyDashes">300-500</item>
+        <item tools:ignore="TypographyDashes">500-1000</item>
+    </string-array>
+    <string-array name="size">
+        <item tools:ignore="TypographyDashes">4.5 to 5.5</item>
+        <item tools:ignore="TypographyDashes">5.5 to 8.0</item>
+    </string-array>
 </resources>
