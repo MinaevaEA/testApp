@@ -72,8 +72,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomAppBar"
-        android:layout_width="387dp"
-        android:layout_height="366dp"
+        android:layout_width="379dp"
+        android:layout_height="349dp"
         android:layout_gravity="bottom"
         android:layout_marginTop="15dp"
         android:background="@drawable/container_shape"
@@ -176,7 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="@string/select"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -232,37 +232,34 @@
 
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="86dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="20dp"
             android:checkedButton="@id/dark_radio"
+            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/done_btn"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/total">
+            app:layout_constraintTop_toBottomOf="@+id/total"
+            app:layout_constraintVertical_bias="0.47">
 
             <RadioButton
                 android:id="@+id/dark_radio"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bottom_select_color_darck"
                 android:button="@drawable/checkbox_selector_details"
                 android:theme="@style/MyRadioButton"
-                android:gravity="center"
                 tools:ignore="ContentDescription" />
 
             <RadioButton
                 android:id="@+id/dark"
                 style="@style/ButtonSelectBlue"
-                android:layout_width="34dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bottom_select_color_blue"
                 android:button="@drawable/checkbox_selector_details"
-                android:theme="@style/MyRadioButtonCheck"
+                android:theme="@style/MyRadioButton"
                 tools:ignore="ContentDescription" />
         </RadioGroup>
 
@@ -271,7 +268,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -297,7 +294,7 @@
                     android:theme="@style/MyRadioButton" />
 
                 <RadioButton
-                    android:id="@+id/radio_blue"
+                    android:id="@+id/details"
                     style="@style/ProductDetailsTableBottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -310,7 +307,7 @@
                     android:theme="@style/MyRadioButton" />
 
                 <RadioButton
-                    android:id="@+id/radio_gray"
+                    android:id="@+id/features"
                     style="@style/ProductDetailsTableBottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -330,7 +327,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="15dp"
             android:src="@drawable/cpu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
@@ -339,7 +336,7 @@
             android:id="@+id/image_camera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="60dp"
             android:src="@drawable/foto"
             app:layout_constraintEnd_toStartOf="@+id/image_cd"
@@ -351,7 +348,7 @@
             android:id="@+id/image_cd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="68dp"
             android:src="@drawable/memory"
             app:layout_constraintEnd_toStartOf="@+id/image_capacity"
@@ -361,7 +358,7 @@
             android:id="@+id/image_capacity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="40dp"
             android:src="@drawable/ssd"
             app:layout_constraintEnd_toEndOf="parent"

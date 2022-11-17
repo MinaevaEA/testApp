@@ -39,10 +39,10 @@ class MyCartFragment : Fragment() {
         val viewModelFactory = MyCartViewModelFactory(dataNetworkInteract)
         myCartViewModel =
             ViewModelProvider(this, viewModelFactory)[MyCartViewModel::class.java]
-        adapterMyCart = MyCartAdapter()
-        myCartViewModel.onViewCreatedLoadingProductDetails()
         binding.recyclerView1.layoutManager = LinearLayoutManager(requireContext())
+        adapterMyCart = MyCartAdapter()
         binding.recyclerView1.adapter = adapterMyCart
+        myCartViewModel.onViewCreatedLoadingProductDetails()
         initObserves()
         binding.backBtn.setOnClickListener {
             myCartViewModel.backToMain.observe(requireActivity()) {
@@ -56,18 +56,13 @@ class MyCartFragment : Fragment() {
             binding.deliveryFree.text = it.delivery
             binding.priceTotal.text = it.total
         }
-        myCartViewModel.loadingImages.observe(requireActivity()) {
+        myCartViewModel.loadingListDataBasket.observe(requireActivity()) {
             adapterMyCart.setDataMyCart(it)
         }
-
     }
 
     private fun backToMain() {
         findNavController().navigate(R.id.navigation_home)
-        /*  requireActivity().supportFragmentManager.beginTransaction()
-              .addToBackStack(null)
-              .replace(R.id.container, ProductDetailsFragment.newInstance(CPU))
-              .commit()*/
     }
 }
 

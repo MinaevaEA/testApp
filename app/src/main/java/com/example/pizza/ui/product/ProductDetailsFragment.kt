@@ -14,7 +14,13 @@ import com.example.pizza.SubApplication
 import com.example.pizza.databinding.FragmentProductDetailsBinding
 import com.example.pizza.retrofit.RetrofitServices
 import javax.inject.Inject
-import kotlin.math.absoluteValue
+import android.graphics.Typeface
+import android.graphics.Color
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+
+
 
 class ProductDetailsFragment : Fragment() {
 
@@ -49,7 +55,71 @@ class ProductDetailsFragment : Fragment() {
             binding.camera.text = it.camera
             binding.capacity.text = it.capacity[0]
             binding.sd.text = it.sd
-
+            binding.shop.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    val content = SpannableString(getString(R.string.title_shop))
+                    content.setSpan(ForegroundColorSpan(resources.getColor(R.color.title)), 0, content.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.BOLD)
+                } else {
+                    val content = SpannableString(getString(R.string.title_shop))
+                    content.setSpan(null, 0, content.length, 0)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.NORMAL)
+                }
+            }
+            binding.details.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    val content = SpannableString(getString(R.string.title_details))
+                    content.setSpan(ForegroundColorSpan(resources.getColor(R.color.title)), 0, content.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.BOLD)
+                } else {
+                    val content = SpannableString(getString(R.string.title_details))
+                    content.setSpan(null, 0, content.length, 0)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.NORMAL)
+                }
+            }
+            binding.features.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    val content = SpannableString(getString(R.string.title_features))
+                    content.setSpan(ForegroundColorSpan(resources.getColor(R.color.title)), 0, content.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.BOLD)
+                } else {
+                    val content = SpannableString(getString(R.string.title_features))
+                    content.setSpan(null, 0, content.length, 0)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.NORMAL)
+                }
+            }
+            binding.button128.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    val content = SpannableString(getString(R.string.gb_one))
+                    content.setSpan(ForegroundColorSpan(Color.WHITE), 0, content.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.BOLD)
+                } else {
+                    val content = SpannableString(getString(R.string.gb_one))
+                    content.setSpan(null, 0, content.length, 0)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.NORMAL)
+                }
+            }
+            binding.button256.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    val content = SpannableString(getString(R.string.gb_one))
+                    content.setSpan(ForegroundColorSpan(Color.WHITE), 0, content.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.BOLD)
+                } else {
+                    val content = SpannableString(getString(R.string.gb_one))
+                    content.setSpan(null, 0, content.length, 0)
+                    buttonView.text = content
+                    buttonView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.mark_pro_reg), Typeface.NORMAL)
+                }
+            }
         }
         binding.backBtn.setOnClickListener {
             productDetailsViewModel.backToMain.observe(requireActivity()) {

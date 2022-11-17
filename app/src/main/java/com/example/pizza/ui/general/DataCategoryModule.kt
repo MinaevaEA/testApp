@@ -10,7 +10,7 @@ class DataCategoryModule {
     @Provides
     fun provideDatabaseHelper(): List<DataCategory> {
         return  listOf(
-            DataCategory("Phones",),
+            DataCategory("Phones"),
             DataCategory("Computer"),
             DataCategory("Health"),
             DataCategory("Books"),

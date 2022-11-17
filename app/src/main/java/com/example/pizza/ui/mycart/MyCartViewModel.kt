@@ -1,6 +1,5 @@
 package com.example.pizza.ui.mycart
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -12,24 +11,15 @@ import kotlinx.coroutines.launch
 class MyCartViewModel(private val dataFromDataBase: DataNetworkMyCartInteract) :
     ViewModel() {
     val loadingProductDetails = MutableLiveData<DataMyCart>()
-    val loadingImages = MutableLiveData<List<DataBasket>>()
+    val loadingListDataBasket = MutableLiveData<List<DataBasket>>()
     val backToMain = SingleLiveEvent<Unit>()
     fun onViewCreatedLoadingProductDetails() {
         viewModelScope.launch {
-            try {
-                val dataProductDetails = dataFromDataBase.dataMyCartInteract()
-                val images = dataProductDetails.basket
-                Log.d("5555555", "${dataProductDetails}")
-                loadingProductDetails.postValue(dataProductDetails)
-                loadingImages.postValue(images)
-                backToMain.postValue(Unit)
-
-
-            } catch (e: Exception) {
-                Log.d("2222", "$e")
-                Log.d("2222", "${e.getLocalizedMessage()}")
-                Log.d("2222", "${e.cause}")
-            }
+            val dataProductDetails = dataFromDataBase.dataMyCartInteract()
+            val listDataBasket = dataProductDetails.basket
+            loadingProductDetails.postValue(dataProductDetails)
+            loadingListDataBasket.postValue(listDataBasket)
+            backToMain.postValue(Unit)
         }
     }
 }

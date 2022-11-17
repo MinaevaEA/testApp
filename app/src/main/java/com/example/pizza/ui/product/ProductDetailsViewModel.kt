@@ -1,6 +1,5 @@
 package com.example.pizza.ui.product
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.example.pizza.DataProductDetails
 import com.example.pizza.SingleLiveEvent
@@ -11,24 +10,18 @@ class ProductDetailsViewModel(private val dataFromDataBase: DataNetworkDetailsIn
 
     val loadingProductDetails = MutableLiveData<DataProductDetails>()
     val loadingImages = MutableLiveData<List<String>>()
-     val backToMain = SingleLiveEvent<Unit>()
+    val backToMain = SingleLiveEvent<Unit>()
+
     fun onViewCreatedLoadingProductDetails() {
         viewModelScope.launch {
-            try {
-                val dataProductDetails = dataFromDataBase.dataNetworkListInteract()!!
-                val images = dataProductDetails.images
-                Log.d("11111111", "${dataProductDetails}")
-                loadingProductDetails.postValue(dataProductDetails)
-                loadingImages.postValue(images)
-                backToMain.postValue(Unit)
-
-            } catch (e: Exception) {
-                Log.d("101010101", "$e")
-                Log.d("10101010101", "${e.getLocalizedMessage()}")
-                Log.d("101010101", "${e.cause}")
-            }
+            val dataProductDetails = dataFromDataBase.dataNetworkListInteract()
+            val images = dataProductDetails.images
+            loadingProductDetails.postValue(dataProductDetails)
+            loadingImages.postValue(images)
+            backToMain.postValue(Unit)
         }
     }
+
 }
 
 @Suppress("UNCHECKED_CAST")

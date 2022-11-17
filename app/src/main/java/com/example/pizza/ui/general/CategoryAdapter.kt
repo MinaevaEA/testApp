@@ -9,9 +9,10 @@ import com.example.pizza.DataCategory
 import com.example.pizza.databinding.ItemCategoryBinding
 
 
-class CategoryAdapter :
+class CategoryAdapter(private val categoryAdapterListener: ViewListener) :
     RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
     private val dataSetCategory = ArrayList<DataCategory>()
+    private val newDataSetCategory = ArrayList<NewDataCategory>()
 
     @SuppressLint("NotifyDataSetChanged")
     fun setDataCategory(newList: List<DataCategory>) {
@@ -20,12 +21,18 @@ class CategoryAdapter :
         Log.d("1", "setData")
         notifyDataSetChanged()
     }
+    fun setNewDataCategory(newListD: List<NewDataCategory>) {
+        newDataSetCategory.clear()
+        newDataSetCategory.addAll(newListD)
+        Log.d("1", "setData")
+        notifyDataSetChanged()
+    }
 
-    //TODO сделать форму для кнопки через shape
     class MyViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataCategory) {
             binding.category.text = data.category
+            // binding.checkBox.isChecked = data.isChecked
         }
     }
 
@@ -37,9 +44,13 @@ class CategoryAdapter :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(dataSetCategory[position])
+     /*   holder.itemView.setOnClickListener {
+            categoryAdapterListener.onCategoryClinked(dataSetCategory[position].)
+        }*/
     }
 
     override fun getItemCount() = dataSetCategory.size
 
 }
+
 

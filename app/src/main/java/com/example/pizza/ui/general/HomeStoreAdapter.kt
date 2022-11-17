@@ -1,7 +1,6 @@
 package com.example.pizza.ui.general
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,6 @@ class HomeStoreAdapter :
     fun setDataHomeStore(newList: List<HomeStore>) {
         dataSetStore.clear()
         dataSetStore.addAll(newList)
-        Log.d("1", "setData")
         notifyDataSetChanged()
     }
 

@@ -23,7 +23,8 @@ data class BestSeller(
     val picture: String
 )
 
-data class DataCategory(val category: String)
+data class DataCategory( val category: String)
+
 
 data class DataList(val home_store: List<HomeStore>, val best_seller: List<BestSeller>)
 data class DataProductDetails(

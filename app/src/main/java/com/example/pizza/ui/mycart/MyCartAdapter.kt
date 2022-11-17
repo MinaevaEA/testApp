@@ -1,7 +1,6 @@
 package com.example.pizza.ui.mycart
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -17,15 +16,13 @@ class MyCartAdapter :
     fun setDataMyCart(newList: List<DataBasket>) {
         dataSetSeller.clear()
         dataSetSeller.addAll(newList)
-        Log.d("1", "setData")
         notifyDataSetChanged()
     }
 
-    //TODO переименовать
     class ViewHolder(private val binding: ItemMyCartBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataBasket) {
-           binding.title.text=data.title
+            binding.title.text = data.title
             binding.priceCart.text = data.price.toString()
             Glide.with(binding.root.context).load(data.images).into(binding.imageSeller)
         }
@@ -39,7 +36,6 @@ class MyCartAdapter :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(dataSetSeller[position])
-
     }
 
     override fun getItemCount() = dataSetSeller.size

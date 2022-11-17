@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +16,6 @@ import com.example.pizza.R
 import com.example.pizza.SubApplication
 import com.example.pizza.databinding.FragmentGeneralScreenBinding
 import com.example.pizza.retrofit.RetrofitServices
-import com.example.pizza.ui.product.ProductDetailsFragment
 import javax.inject.Inject
 
 
@@ -26,12 +24,15 @@ class GeneralScreenFragment : Fragment(), ViewListener {
     private lateinit var adapterBestSeller: AdapterBestSeller
     private lateinit var viewPagerAdapterHomeStore: HomeStoreAdapter
     private lateinit var generalScreenViewModel: GeneralScreenViewModel
-    private lateinit var adapterCategory:CategoryAdapter
+    private lateinit var adapterCategory: CategoryAdapter
+
     @Inject
     lateinit var dataNetworkInteract: DataNetworkInteract
+
     @Inject
-     lateinit var retrofitServices: RetrofitServices
-     @Inject
+    lateinit var retrofitServices: RetrofitServices
+
+    @Inject
     lateinit var dataCategory: List<DataCategory>
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,14 +46,6 @@ class GeneralScreenFragment : Fragment(), ViewListener {
         super.onViewCreated(view, savedInstanceState)
         val appComponent = (requireContext().applicationContext as SubApplication).appComponent
         appComponent.getGeneralScreenComponent().injectGeneralScreenFragment(this)
-
-      //  retrofitServices =
-      //      (requireContext().applicationContext as SubApplication).provideDataFromNetwork()
-      //          .create()
-      //  val listDataCategory =
-      //      (requireContext().applicationContext as SubApplication).provideDataSource()
-       //         .getCategoryList()
-      //  val dataNetworkInteract = DataNetworkInteract(retrofitServices, listDataCategory)
         val viewModelFactory = GeneralScreenViewModelFactory(dataNetworkInteract)
         generalScreenViewModel =
             ViewModelProvider(this, viewModelFactory)[GeneralScreenViewModel::class.java]
@@ -63,22 +56,19 @@ class GeneralScreenFragment : Fragment(), ViewListener {
         binding.recyclerView.adapter = adapterBestSeller
 
         binding.recyclerViewCategory.layoutManager = LinearLayoutManager(requireContext())
-        //TODO покопаться
         (binding.recyclerViewCategory.layoutManager as LinearLayoutManager).orientation =
             LinearLayoutManager.HORIZONTAL
-        adapterCategory = CategoryAdapter()
+        adapterCategory = CategoryAdapter(this)
         binding.recyclerViewCategory.adapter = adapterCategory
         binding.viewPager.adapter = viewPagerAdapterHomeStore
         setUpViewPager()
         initObserves()
         binding.filterBtn.setOnClickListener {
-             generalScreenViewModel.openFilter.observe(requireActivity()){
-                 openFilter()
-             }
+            generalScreenViewModel.openFilter.observe(requireActivity()) {
+                openFilter()
+            }
         }
     }
-
-    //TODO apply with
 
     private fun initObserves() {
         generalScreenViewModel.loadingListCategory.observe(requireActivity()) {
@@ -103,12 +93,9 @@ class GeneralScreenFragment : Fragment(), ViewListener {
     override fun onClicked(position: String) {
         generalScreenViewModel.onClickedDetail(position)
     }
+
     private fun openProductDetails(CPU: String) {
         findNavController().navigate(R.id.product_details)
-      /*  requireActivity().supportFragmentManager.beginTransaction()
-            .addToBackStack(null)
-            .replace(R.id.container, ProductDetailsFragment.newInstance(CPU))
-            .commit()*/
     }
 
     private fun openFilter() {

@@ -51,6 +51,4 @@ class AdapterBestSeller(private val currencyAdapterListener: ViewListener) :
     override fun getItemCount() = dataSetSeller.size
 }
 
-interface ViewListener {
-    fun onClicked(position: String)
-  }
+

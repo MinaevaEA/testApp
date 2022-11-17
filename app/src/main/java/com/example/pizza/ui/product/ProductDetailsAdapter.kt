@@ -1,7 +1,6 @@
 package com.example.pizza.ui.product
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,18 +10,18 @@ import com.example.pizza.databinding.ItemPageProductDetailsBinding
 class ProductDetailsAdapter :
     RecyclerView.Adapter<ProductDetailsAdapter.ViewPagerViewHolder>() {
     private var dataSetStore = ArrayList<String>()
+
     @SuppressLint("NotifyDataSetChanged")
     fun setDataProductDetails(newList: List<String>) {
         dataSetStore.clear()
         dataSetStore.addAll(newList)
-        Log.d("1", "setData")
         notifyDataSetChanged()
     }
 
-   class ViewPagerViewHolder(private val binding: ItemPageProductDetailsBinding) :
+    class ViewPagerViewHolder(private val binding: ItemPageProductDetailsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: String) {
-            Glide.with(binding.root.context).load(data).into(binding.imageModel);
+            Glide.with(binding.root.context).load(data).into(binding.imageModel)
         }
     }
 
@@ -35,7 +34,6 @@ class ProductDetailsAdapter :
             parent,
             false
         )
-
         return ViewPagerViewHolder(binding)
     }
 

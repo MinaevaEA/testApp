@@ -34,6 +34,10 @@
         <item tools:ignore="TypographyDashes">300-500</item>
         <item tools:ignore="TypographyDashes">500-1000</item>
     </string-array>
+    <string-array name="city">
+        <item tools:ignore="TypographyDashes">Moscow</item>
+        <item tools:ignore="TypographyDashes">Spb</item>
+    </string-array>
     <string-array name="size">
         <item tools:ignore="TypographyDashes">4.5 to 5.5</item>
         <item tools:ignore="TypographyDashes">5.5 to 8.0</item>

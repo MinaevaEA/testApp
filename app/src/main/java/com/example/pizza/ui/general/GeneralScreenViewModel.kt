@@ -7,16 +7,21 @@ import androidx.lifecycle.viewModelScope
 import com.example.pizza.*
 import kotlinx.coroutines.launch
 
+data class NewDataCategory(val isChecked: Boolean, val category: String)
 
 class GeneralScreenViewModel(private val dataFromDataBase: DataNetworkInteract) :
     ViewModel() {
+
     val loadingListBestSeller = MutableLiveData<List<BestSeller>>()
     val loadingListCategory = MutableLiveData<List<DataCategory>>()
-
     val loadingHomeStore = MutableLiveData<List<HomeStore>>()
     val openProductDetails = SingleLiveEvent<String>()
     val openFilter = SingleLiveEvent<Unit>()
+  //  val categoryCheckedEvent = MutableLiveData<List<NewDataCategory>>()
+   // private var listCategory = mutableListOf<NewDataCategory>()
+//    private lateinit var newCategory: NewDataCategory
     fun onViewCreatedLoadingList() {
+
         viewModelScope.launch {
             val listPizzaResponse = dataFromDataBase.dataNetworkListInteract().best_seller
             loadingListBestSeller.postValue(listPizzaResponse)
@@ -25,6 +30,18 @@ class GeneralScreenViewModel(private val dataFromDataBase: DataNetworkInteract) 
             val listCategoryResponse = dataFromDataBase.dataCategory
             loadingListCategory.postValue(listCategoryResponse)
             openFilter.postValue(Unit)
+/*
+            for (n in listCategoryResponse) {
+                val index = listCategoryResponse.size
+                newCategory = if (index == 0) {
+                    NewDataCategory(true, n.category)
+                } else {
+                    NewDataCategory(false, n.category)
+                }
+            }
+            listCategory.apply {
+                add(newCategory)
+            }*/
         }
     }
 
@@ -32,6 +49,7 @@ class GeneralScreenViewModel(private val dataFromDataBase: DataNetworkInteract) 
         openProductDetails.postValue(currencyPosition)
     }
 }
+
 
 @Suppress("UNCHECKED_CAST")
 class GeneralScreenViewModelFactory(

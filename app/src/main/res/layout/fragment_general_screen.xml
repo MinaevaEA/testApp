@@ -35,14 +35,26 @@
 
         <Spinner
             android:id="@+id/spinner2"
-            android:layout_width="189dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
             android:layout_marginTop="-25dp"
-            android:fontFamily="@font/mark_pro"
-            android:text="wwwww"
+            android:fontFamily="@font/mark_pro_b"
+            android:background="@color/background"
+            android:entries="@array/city"
             android:textColor="@color/title"
             android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/position"
+            android:layout_width="32dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="-29dp"
+            android:layout_marginEnd="46dp"
+            android:background="@color/background"
+            app:srcCompat="@drawable/loc2"
+            tools:ignore="ContentDescription" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
