@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".ui.product.ProductDetailsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/main.appbar"
+        android:layout_width="410dp"
+        android:layout_height="53dp"
+        android:background="#F5F5F5"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            tools:ignore="MissingConstraints">
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <ImageButton
+            android:id="@+id/filter_btn"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/bottom_detail"
+            android:src="@drawable/cart"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_gravity="left|bottom"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-35dp"
+            android:background="@drawable/bottom_navigation_blue"
+            android:src="@drawable/st"
+            app:layout_scrollEffect="@null"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="-25dp"
+            android:fontFamily="@font/mark_pro"
+            android:text="@string/title_product"
+            android:textColor="@color/title"
+            android:textSize="18sp" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_anchorGravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/main.appbar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="19dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomAppBar"
+        android:layout_width="379dp"
+        android:layout_height="349dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/container_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPagerDetails"
+        app:layout_constraintVertical_bias="0.057"
+        tools:ignore="BottomAppBar,MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/ProductDetailsGeneralTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.003"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="4dp"
+            android:textColor="#B7B7B7"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_cpu" />
+
+        <TextView
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@+id/cpu"
+            app:layout_constraintTop_toBottomOf="@+id/image_camera" />
+
+        <TextView
+            android:id="@+id/capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.036"
+            app:layout_constraintStart_toEndOf="@+id/sd"
+            app:layout_constraintTop_toBottomOf="@+id/image_capacity" />
+
+        <ImageButton
+            android:id="@+id/close_btn"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/bottom_navigation_blue"
+            android:src="@drawable/like"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/done_btn"
+            style="@style/ButtonGeneral"
+            android:layout_width="330dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/btn_add_cart"
+            android:textAllCaps="false"
+            app:backgroundTint="@null"
+            app:backgroundTintMode="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/sd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@+id/camera"
+            app:layout_constraintTop_toBottomOf="@+id/image_cd" />
+
+        <TextView
+            android:id="@+id/total"
+            style="@style/TitleMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/select"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cpu" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.724"
+            app:layout_constraintStart_toEndOf="@+id/radioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/total">
+
+            <RadioButton
+                android:id="@+id/button128"
+                android:layout_width="86dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/selector_memory_details"
+                android:button="@null"
+                android:paddingStart="20dp"
+                android:stateListAnimator="@null"
+                android:text="@string/gb_one"
+                android:textAllCaps="false"
+                android:textColor="#8D8D8D"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@+id/button256"
+                app:layout_constraintTop_toBottomOf="@+id/total" />
+
+            <RadioButton
+                android:id="@+id/button256"
+                android:layout_width="83dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/selector_memory_details"
+                android:button="@null"
+                android:paddingStart="20dp"
+                android:stateListAnimator="@null"
+                android:text="@string/gb_two"
+                android:textAllCaps="false"
+                android:textColor="#8D8D8D"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/total" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="86dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="20dp"
+            android:checkedButton="@id/dark_radio"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/done_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total"
+            app:layout_constraintVertical_bias="0.47">
+
+            <RadioButton
+                android:id="@+id/dark_radio"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bottom_select_color_darck"
+                android:button="@drawable/checkbox_selector_details"
+                android:theme="@style/MyRadioButton"
+                tools:ignore="ContentDescription" />
+
+            <RadioButton
+                android:id="@+id/dark"
+                style="@style/ButtonSelectBlue"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bottom_select_color_blue"
+                android:button="@drawable/checkbox_selector_details"
+                android:theme="@style/MyRadioButton"
+                tools:ignore="ContentDescription" />
+        </RadioGroup>
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checkedButton="@id/shop"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/shop"
+                    style="@style/ProductDetailsTableBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_details"
+                    android:button="@null"
+                    android:padding="10dp"
+                    android:text="@string/title_shop"
+                    android:theme="@style/MyRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/details"
+                    style="@style/ProductDetailsTableBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_details"
+                    android:button="@null"
+                    android:padding="10dp"
+                    android:text="@string/title_details"
+                    android:theme="@style/MyRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/features"
+                    style="@style/ProductDetailsTableBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_details"
+                    android:button="@null"
+                    android:padding="10dp"
+                    android:text="@string/title_features"
+                    android:theme="@style/MyRadioButton" />
+            </RadioGroup>
+
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/image_cpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/cpu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <ImageView
+            android:id="@+id/image_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="60dp"
+            android:src="@drawable/foto"
+            app:layout_constraintEnd_toStartOf="@+id/image_cd"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toEndOf="@+id/image_cpu"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <ImageView
+            android:id="@+id/image_cd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="68dp"
+            android:src="@drawable/memory"
+            app:layout_constraintEnd_toStartOf="@+id/image_capacity"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <ImageView
+            android:id="@+id/image_capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/ssd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

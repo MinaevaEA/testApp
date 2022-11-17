@@ -1,6 +1,45 @@
-<resources>
-    <string name="app_name">Pizza</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">testSamsung</string>
+    <string name="title_shop">Shop</string>
+    <string name="title_details">Details</string>
+    <string name="title_features">Features</string>
+    <string name="ecommerce">Ecommerce</string>
+    <string name="concept">Concept</string>
+    <string name="btn_by_now">Buy now!</string>
+    <string name="btn_add_cart">Add to Cart $1.500.00</string>
+    <string name="select">Select color and capacity</string>
+    <string name="hot_sales">Hot sales</string>
+    <string name="select_ct">Select Category</string>
+    <string name="best_seller">Best Seller</string>
+    <string name="see_more">see more</string>
+    <string name="view_all">view_all</string>
+    <string name="done">Done</string>
+    <string name="brand_fl">Brand</string>
+    <string name="price_fl">Price</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
+    <string name="size_fl">Size</string>
+    <string name="my_cart">My Cart</string>
+    <string name="option_fl">Filter options</string>
+    <string name="gb_one" >128 GB</string>
+    <string name="gb_two" >256 GB</string>
+    <string name="title_loc" >Add address</string>
+    <string name="title_product" >Product Details</string>
+    <string name="btn_checkout" >Checkout</string>
+    <string-array name="brand">
+        <item>Samsung</item>
+        <item>Iphone</item>
+    </string-array>
+    <string-array name="price">
+        <item tools:ignore="TypographyDashes">300-500</item>
+        <item tools:ignore="TypographyDashes">500-1000</item>
+    </string-array>
+    <string-array name="city">
+        <item tools:ignore="TypographyDashes">Moscow</item>
+        <item tools:ignore="TypographyDashes">Spb</item>
+    </string-array>
+    <string-array name="size">
+        <item tools:ignore="TypographyDashes">4.5 to 5.5</item>
+        <item tools:ignore="TypographyDashes">5.5 to 8.0</item>
+    </string-array>
 </resources>

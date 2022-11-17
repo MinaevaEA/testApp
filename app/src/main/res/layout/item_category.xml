@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:padding="5dp"
+    android:id="@+id/categoryContainer">
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@color/background"
+            android:fontFamily="@font/mark_pro_med"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"
+            android:textColor="@color/title"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_box" />
+
+        <CheckBox
+            android:id="@+id/check_box"
+            android:layout_width="75dp"
+            android:layout_height="70dp"
+            android:button="@drawable/selector_category"
+            android:padding="15dp"
+            android:theme="@style/MyRadioButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:useMaterialThemeColors="false" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/check_box"
+            app:layout_constraintEnd_toEndOf="@+id/check_box"
+            app:layout_constraintStart_toStartOf="@+id/check_box"
+            app:layout_constraintTop_toTopOf="@+id/check_box"
+            app:srcCompat="@drawable/vector" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <font
+        app:font="@font/mark_pro_med"
+        tools:ignore="ResourceCycle" />
+</font-family>

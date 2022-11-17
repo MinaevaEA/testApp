@@ -1,11 +1,11 @@
 package com.example.pizza
 
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.pizza.databinding.ActivityMainBinding
 
@@ -24,10 +24,28 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.explorer, R.id.my_cart, R.id.close_btn, R.id.product_details
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+
+            if (destination.id == R.id.my_cart) {
+                navView.visibility = View.GONE
+            } else if(destination.id == R.id.product_details){
+                navView.visibility = View.INVISIBLE
+            } else {
+                navView.visibility = View.VISIBLE
+            }
+        }
+        val badge = navView.getOrCreateBadge(R.id.my_cart)
+        if (badge != null) {
+            badge.isVisible = true
+            badge.number = 2
+        }else{
+            badge.isVisible = false
+        }
     }
+
 }
