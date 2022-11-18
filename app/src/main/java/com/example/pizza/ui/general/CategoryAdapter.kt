@@ -9,33 +9,25 @@ import com.example.pizza.DataCategory
 import com.example.pizza.databinding.ItemCategoryBinding
 
 
-class CategoryAdapter(private val categoryAdapterListener: ViewListener) :
+class CategoryAdapter(private val categoryAdapterListener: categoryAdapterListener) :
     RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
-    private val dataSetCategory = ArrayList<DataCategory>()
     private val newDataSetCategory = ArrayList<NewDataCategory>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setDataCategory(newList: List<DataCategory>) {
-        dataSetCategory.clear()
-        dataSetCategory.addAll(newList)
-        Log.d("1", "setData")
-        notifyDataSetChanged()
-    }
     fun setNewDataCategory(newListD: List<NewDataCategory>) {
         newDataSetCategory.clear()
         newDataSetCategory.addAll(newListD)
-        Log.d("1", "setData")
+        Log.d("category", "setData: $newListD")
         notifyDataSetChanged()
     }
 
     class MyViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: DataCategory) {
+        fun bind(data: NewDataCategory) {
             binding.category.text = data.category
-            // binding.checkBox.isChecked = data.isChecked
+             binding.checkBox.isChecked = data.isChecked
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemCategoryBinding.inflate(layoutInflater, parent, false)
@@ -43,13 +35,14 @@ class CategoryAdapter(private val categoryAdapterListener: ViewListener) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(dataSetCategory[position])
-     /*   holder.itemView.setOnClickListener {
-            categoryAdapterListener.onCategoryClinked(dataSetCategory[position].)
-        }*/
+        holder.bind(newDataSetCategory[position])
+        holder.itemView.rootView.setOnClickListener {
+            categoryAdapterListener.onCategoryClinked(position)
+            Log.d("88888","click2")
+        }
     }
 
-    override fun getItemCount() = dataSetCategory.size
+    override fun getItemCount() = newDataSetCategory.size
 
 }
 

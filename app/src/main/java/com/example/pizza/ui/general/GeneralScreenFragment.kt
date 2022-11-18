@@ -1,6 +1,7 @@
 package com.example.pizza.ui.general
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,12 +20,13 @@ import com.example.pizza.retrofit.RetrofitServices
 import javax.inject.Inject
 
 
-class GeneralScreenFragment : Fragment(), ViewListener {
+class GeneralScreenFragment : Fragment(), ViewListener, categoryAdapterListener {
     private lateinit var binding: FragmentGeneralScreenBinding
     private lateinit var adapterBestSeller: AdapterBestSeller
     private lateinit var viewPagerAdapterHomeStore: HomeStoreAdapter
     private lateinit var generalScreenViewModel: GeneralScreenViewModel
     private lateinit var adapterCategory: CategoryAdapter
+
 
     @Inject
     lateinit var dataNetworkInteract: DataNetworkInteract
@@ -71,8 +73,8 @@ class GeneralScreenFragment : Fragment(), ViewListener {
     }
 
     private fun initObserves() {
-        generalScreenViewModel.loadingListCategory.observe(requireActivity()) {
-            adapterCategory.setDataCategory(it)
+        generalScreenViewModel.categoryCheckedEvent.observe(requireActivity()) {
+            adapterCategory.setNewDataCategory(it)
         }
         generalScreenViewModel.loadingListBestSeller.observe(requireActivity()) {
             adapterBestSeller.setDataBestSeller(it)
@@ -83,6 +85,12 @@ class GeneralScreenFragment : Fragment(), ViewListener {
         generalScreenViewModel.openProductDetails.observe(requireActivity()) {
             openProductDetails(it)
         }
+    }
+
+
+    override fun onCategoryClinked(position: Int) {
+        Log.d("88888","click")
+        generalScreenViewModel.onCategoryClicked(position)
     }
 
     private fun setUpViewPager() {

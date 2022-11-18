@@ -2,6 +2,7 @@ package com.example.pizza
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
+import com.google.gson.annotations.SerializedName
 import javax.inject.Named
 
 
@@ -26,7 +27,11 @@ data class BestSeller(
 data class DataCategory( val category: String)
 
 
-data class DataList(val home_store: List<HomeStore>, val best_seller: List<BestSeller>)
+data class DataList(
+    @SerializedName("home_store")
+    val homeStore: List<HomeStore>,
+    val best_seller: List<BestSeller>)
+
 data class DataProductDetails(
     val CPU: String,
     val camera: String,
