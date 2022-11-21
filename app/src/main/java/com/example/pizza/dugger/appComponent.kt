@@ -1,9 +1,9 @@
 package com.example.pizza.dugger
 
-import com.example.pizza.ui.general.AppModule
-import com.example.pizza.ui.general.GeneralScreenComponent
-import com.example.pizza.ui.mycart.MyCartComponent
-import com.example.pizza.ui.product.ProductDetailsComponent
+import com.example.pizza.general.AppModule
+import com.example.pizza.general.dugger.GeneralScreenComponent
+import com.example.pizza.mycart.dugger.MyCartComponent
+import com.example.pizza.product.dugger.ProductDetailsComponent
 import dagger.Component
 
 @Component(modules = [AppModule::class])

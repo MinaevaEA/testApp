@@ -1,8 +1,7 @@
-package com.example.pizza.ui.general
+package com.example.pizza.general
 
 import android.app.Application
 import android.content.Context
-import com.example.pizza.DataCategory
 import com.example.pizza.retrofit.RetrofitServices
 import dagger.Module
 import dagger.Provides
